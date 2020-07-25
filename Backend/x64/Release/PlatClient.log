@@ -1,0 +1,19 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(467,5): warning MSB8028: The intermediate directory (x64\Release\) contains files shared from another project (PlatClient.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  64 bit Processing .\rpcClient.idl
+  rpcClient.idl
+  client.cpp
+  connection_win.cpp
+  discord_register_win.cpp
+  discord_rpc.cpp
+  dllmain.cpp
+  rpc_connection.cpp
+  serialization.cpp
+  Discord.cpp
+  main.cpp
+  mem.cpp
+  rpcClient_c.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 623 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  PlatClient.vcxproj -> C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\x64\Release\Backend.exe

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\overlay">
+      <UniqueIdentifier>{a080b264-a83e-484a-bb1e-2839c9d50ecf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\overlay headers">
+      <UniqueIdentifier>{518f6590-c87b-4cb5-8d0f-14ec78e94f6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\rpc-server">
+      <UniqueIdentifier>{eebd0c65-ee33-4e2b-b8a8-1b07ff02e44a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ExternalOverlay.h">
+      <Filter>Header Files\overlay headers</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files\overlay headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paint.h">
+      <Filter>Header Files\overlay headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files\overlay headers</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files\overlay headers</Filter>
+    </ClInclude>
+    <ClInclude Include="rpc_h.h">
+      <Filter>Source Files\rpc-server</Filter>
+    </ClInclude>
+    <ClInclude Include="server.h">
+      <Filter>Source Files\rpc-server</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ExternalOverlay.cpp">
+      <Filter>Source Files\overlay</Filter>
+    </ClCompile>
+    <ClCompile Include="Paint.cpp">
+      <Filter>Source Files\overlay</Filter>
+    </ClCompile>
+    <ClCompile Include="rpc_s.cpp">
+      <Filter>Source Files\rpc-server</Filter>
+    </ClCompile>
+    <ClCompile Include="server.cpp">
+      <Filter>Source Files\rpc-server</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ExternalOverlay.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="ExternalOverlay.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="rpc.idl">
+      <Filter>Source Files\rpc-server</Filter>
+    </Midl>
+  </ItemGroup>
+</Project>

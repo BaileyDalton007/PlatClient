@@ -1,0 +1,19 @@
+﻿midl : command line warning MIDL1007: switch specified more than once on command line : app_config
+  Processing .\Clientrpc.idl
+  Clientrpc.idl
+  Client.cpp
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\Backend\Client.cpp(3,10): fatal error C1083: Cannot open include file: 'rpcClient_h.h': No such file or directory
+  connection_win.cpp
+  discord_register_win.cpp
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\Backend\discord-rpc\src\discord_register_win.cpp(1,10): fatal error C1083: Cannot open include file: 'discord_rpc.h': No such file or directory
+  discord_rpc.cpp
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\Backend\discord-rpc\src\discord_rpc.cpp(1,10): fatal error C1083: Cannot open include file: 'discord_rpc.h': No such file or directory
+  dllmain.cpp
+  rpc_connection.cpp
+  serialization.cpp
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\Backend\discord-rpc\src\serialization.cpp(3,10): fatal error C1083: Cannot open include file: 'discord_rpc.h': No such file or directory
+  Discord.cpp
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\Backend\Discord.h(2,10): fatal error C1083: Cannot open include file: 'discord_register.h': No such file or directory
+  main.cpp
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\Backend\Discord.h(2,10): fatal error C1083: Cannot open include file: 'discord_register.h': No such file or directory
+  mem.cpp

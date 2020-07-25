@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="memory">
+      <UniqueIdentifier>{77849c74-9fc0-4e23-aa8b-b54d0c54a4a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Discord">
+      <UniqueIdentifier>{9cb34ed7-26b8-4520-baeb-35d1eca06605}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Discord\Class">
+      <UniqueIdentifier>{e05a617a-77ad-4615-a99a-054043387229}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\rpcClient">
+      <UniqueIdentifier>{32ef6cef-5259-4516-b7a2-96d5189c6577}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\features">
+      <UniqueIdentifier>{87af82c6-5fd1-4b4e-bcb1-ecdcb4db6710}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\features\cpsCounter">
+      <UniqueIdentifier>{505889d0-9248-4373-9c3f-3e1afa217b84}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mem.cpp">
+      <Filter>memory</Filter>
+    </ClCompile>
+    <ClCompile Include="discord-rpc\src\connection_win.cpp">
+      <Filter>Discord</Filter>
+    </ClCompile>
+    <ClCompile Include="discord-rpc\src\discord_register_win.cpp">
+      <Filter>Discord</Filter>
+    </ClCompile>
+    <ClCompile Include="discord-rpc\src\discord_rpc.cpp">
+      <Filter>Discord</Filter>
+    </ClCompile>
+    <ClCompile Include="discord-rpc\src\dllmain.cpp">
+      <Filter>Discord</Filter>
+    </ClCompile>
+    <ClCompile Include="discord-rpc\src\rpc_connection.cpp">
+      <Filter>Discord</Filter>
+    </ClCompile>
+    <ClCompile Include="discord-rpc\src\serialization.cpp">
+      <Filter>Discord</Filter>
+    </ClCompile>
+    <ClCompile Include="Discord.cpp">
+      <Filter>Discord\Class</Filter>
+    </ClCompile>
+    <ClCompile Include="rpcClient_c.cpp">
+      <Filter>Source Files\rpcClient</Filter>
+    </ClCompile>
+    <ClCompile Include="client.cpp">
+      <Filter>Source Files\rpcClient</Filter>
+    </ClCompile>
+    <ClCompile Include="cps.cpp">
+      <Filter>Source Files\features\cpsCounter</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="mem.h">
+      <Filter>memory</Filter>
+    </ClInclude>
+    <ClInclude Include="discord-rpc\src\backoff.h">
+      <Filter>Discord</Filter>
+    </ClInclude>
+    <ClInclude Include="discord-rpc\src\msg_queue.h">
+      <Filter>Discord</Filter>
+    </ClInclude>
+    <ClInclude Include="discord-rpc\src\rpc_connection.h">
+      <Filter>Discord</Filter>
+    </ClInclude>
+    <ClInclude Include="discord-rpc\src\serialization.h">
+      <Filter>Discord</Filter>
+    </ClInclude>
+    <ClInclude Include="Discord.h">
+      <Filter>Discord\Class</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rpcClient_h.h">
+      <Filter>Source Files\rpcClient</Filter>
+    </ClInclude>
+    <ClInclude Include="client.h">
+      <Filter>Source Files\rpcClient</Filter>
+    </ClInclude>
+    <ClInclude Include="cps.h">
+      <Filter>Source Files\features\cpsCounter</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="rpcClient.idl">
+      <Filter>Source Files\rpcClient</Filter>
+    </Midl>
+  </ItemGroup>
+</Project>
