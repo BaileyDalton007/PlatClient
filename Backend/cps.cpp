@@ -67,3 +67,58 @@ const char* getCPS()
 {
 	return (const char*)cps;
 }
+
+
+std::vector<int> Rclicks;
+bool currRDown = false;
+
+const char* Rcps;
+
+void getCurrRClick()
+{
+	if (currRDown == false) {
+		if (GetKeyState(VK_RBUTTON) & 0x8000)
+		{
+			currRDown = true;
+			auto t2 = std::chrono::high_resolution_clock::now();
+			std::chrono::duration<double, std::milli> click_ms = t2 - startPoint;
+			Rclicks.push_back(click_ms.count());
+		}
+	}
+
+	if (currRDown == true)
+	{
+		if (GetKeyState(VK_RBUTTON) == 0)
+		{
+			currRDown = false;
+			auto t2 = std::chrono::high_resolution_clock::now();
+			std::chrono::duration<double, std::milli> click_ms = t2 - startPoint;
+			Rclicks.push_back(click_ms.count());
+		}
+	}
+}
+
+void updateRCPS()
+{
+	auto curr1 = std::chrono::high_resolution_clock::now();
+	std::chrono::duration<double, std::milli> curr = curr1 - startPoint;
+	for (int i = 0; i < Rclicks.size(); i++)
+	{
+		if (curr.count() - Rclicks[i] > 1005)
+		{
+			Rclicks.erase(Rclicks.begin() + (i));
+		}
+	}
+	int size = (int)Rclicks.size();
+	//int size = (int)4;
+
+	//char acps[1000];
+	//_itoa_s(size, acps, 10);
+
+	Rcps = (const char*)cpsCodes[size];
+}
+
+const char* getRCPS()
+{
+	return (const char*)Rcps;
+}

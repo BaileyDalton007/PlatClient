@@ -63,7 +63,10 @@ int Paint::render()
 
     if (targetWnd == GetForegroundWindow())
     {
-        drawText((char*)getOutputData(), width / 10, height / 10, 255, 171, 0, 182, mainFont);
+        // left & right click cps counters
+        drawText((char*)getlcps(), width / 10, height / 10, 255, 171, 0, 182, mainFont);
+        drawText((char*)getrcps(), (width / 10) + 20, height / 10, 255, 171, 0, 182, mainFont);
+
     }
 
     d3dDevice->EndScene();

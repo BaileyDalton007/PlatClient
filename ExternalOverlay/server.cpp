@@ -4,18 +4,36 @@
 #include <stdio.h>
 #include <vector>
 
-const char* outputData = reinterpret_cast<const char*>("unset");
+int packetIter = 0;
+const char* rpcData[2] = { "unset", "unset"};
+
+const char* rcps;
+const char* lcps;
+
 // Server function.
-void Output(
-    /* [string][in] */ const char* szOutput)
+void Output(const char* szOutput)
 {
-    outputData = szOutput;
+    if (packetIter >= sizeof(rpcData) / sizeof(rpcData[0]))
+    {
+        packetIter = 0;
+    }
+    rpcData[packetIter] = szOutput;
+    packetIter++;
+
 }
 
-const char* getOutputData()
+const char* getlcps()
 {
-    return outputData;
+    rcps = reinterpret_cast<const char*>(rpcData[0]);
+    return rcps;
 }
+
+const char* getrcps()
+{
+    lcps = reinterpret_cast<const char*>(rpcData[1]);
+    return lcps;
+}
+
 // Naive security callback.
 RPC_STATUS CALLBACK SecurityCallback(RPC_IF_HANDLE /*hInterface*/, void* /*pBindingHandle*/)
 {

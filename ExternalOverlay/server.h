@@ -2,4 +2,5 @@
 
 void rpcMain(void* data);
 int startRPCThread();
-const char* getOutputData();
+const char* getlcps();
+const char* getrcps();

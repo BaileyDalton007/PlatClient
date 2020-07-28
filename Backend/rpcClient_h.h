@@ -25,7 +25,6 @@
 
 #include "rpc.h"
 #include "rpcndr.h"
-#include <vector>
 
 #ifndef __RPCNDR_H_VERSION__
 #error this stub requires an updated version of <rpcndr.h>

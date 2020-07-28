@@ -74,7 +74,12 @@ int main()
 	float currFov;
 	while (true) {
 		getCurrClick();
+		getCurrRClick();
+
 		updateCPS();
+		updateRCPS();
+
+
 		//std::cout << updateCPS() << std::endl;
 		ReadProcessMemory(hProcess, (BYTE*)fovAddr, &currFov, sizeof(currFov), nullptr);
 		float oldFov;
