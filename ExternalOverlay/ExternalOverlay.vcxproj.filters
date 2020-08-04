@@ -22,6 +22,12 @@
     <Filter Include="Source Files\rpc-server">
       <UniqueIdentifier>{eebd0c65-ee33-4e2b-b8a8-1b07ff02e44a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\features">
+      <UniqueIdentifier>{3d006fc9-ab73-4d5b-81e2-9b506257d38f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\features\youtube">
+      <UniqueIdentifier>{67ff9d8a-d493-4a42-aed6-14556d633d07}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ExternalOverlay.h">
@@ -45,6 +51,9 @@
     <ClInclude Include="server.h">
       <Filter>Source Files\rpc-server</Filter>
     </ClInclude>
+    <ClInclude Include="subCount.h">
+      <Filter>Source Files\features\youtube</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ExternalOverlay.cpp">
@@ -58,6 +67,9 @@
     </ClCompile>
     <ClCompile Include="server.cpp">
       <Filter>Source Files\rpc-server</Filter>
+    </ClCompile>
+    <ClCompile Include="subCount.cpp">
+      <Filter>Source Files\features\youtube</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

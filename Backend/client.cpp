@@ -8,6 +8,7 @@
 
 const char* lcps = "unset";
 const char* rcps = "unset";
+
 std::vector<const char*>rpcPacket(2, "unset");
 
 void rpcClientMain(void* data)
@@ -26,6 +27,7 @@ void rpcClientMain(void* data)
             
             rpcPacket[0] = lcps;
             rpcPacket[1] = rcps;
+
 
 
             status = RpcStringBindingComposeA(

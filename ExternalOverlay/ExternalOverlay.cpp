@@ -12,6 +12,7 @@
 #include <WinUser.h>
 #include <wingdi.h>
 #include <vector>
+#include "subCount.h"
 #pragma comment (lib, "User32.lib")
 #pragma comment (lib, "Gdi32.lib")
 

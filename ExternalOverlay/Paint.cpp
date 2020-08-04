@@ -5,6 +5,9 @@
 #include "server.h"
 #include <winuser.h>
 #pragma comment (lib, "User32.lib")
+#include "subCount.h"
+#include "ExternalOverlay.h"
+
 
 
 
@@ -30,15 +33,20 @@ int Paint::d3D9Init(HWND hWnd) {
     HRESULT res = d3dObject->CreateDeviceEx(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hWnd, D3DCREATE_HARDWARE_VERTEXPROCESSING, &d3dparams, 0, &d3dDevice);
 
     if (FAILED(res)) {
-        std::wstring ws(DXGetErrorString(res));
+        /*std::wstring ws(DXGetErrorString(res));
         std::string str(ws.begin(), ws.end());    
         std::wstring ws2(DXGetErrorDescription(res));
         std::string str2(ws2.begin(), ws2.end());
         std::string error = "Error: " + str + " error description: " + str2;
-        exit(1);
+        exit(1);*/
     }
 
-    D3DXCreateFont(d3dDevice, 25, 0, FW_BOLD, 1, false, DEFAULT_CHARSET, OUT_DEVICE_PRECIS, ANTIALIASED_QUALITY, DEFAULT_PITCH, L"Comic Sans", &mainFont);
+    //AddFontResourceExA("zoeyfont.ttf", FR_PRIVATE, 0);
+    AddFontResourceExA("../ExternalOverlay/zoeyfont.tff", FR_PRIVATE, 0);
+
+    //D3DXCreateFont(d3dDevice, 25, 0, FW_BOLD, 1, false, DEFAULT_CHARSET, OUT_DEVICE_PRECIS, ANTIALIASED_QUALITY, DEFAULT_PITCH, L"Comic Sans", &mainFont);
+    D3DXCreateFont(d3dDevice, 25, 0, FW_BOLD, 1, false, DEFAULT_CHARSET, OUT_DEVICE_PRECIS, ANTIALIASED_QUALITY, DEFAULT_PITCH, L"Zoey Font Regular", &mainFont);
+
 
     return 0;
 
@@ -66,6 +74,10 @@ int Paint::render()
         // left & right click cps counters
         drawText((char*)getlcps(), width / 10, height / 10, 255, 171, 0, 182, mainFont);
         drawText((char*)getrcps(), (width / 10) + 20, height / 10, 255, 171, 0, 182, mainFont);
+
+        // Youtube
+        drawText((char*)getYoutubeData(), width / 10, (height * 0.80), 255, 171, 0, 182, mainFont);
+
 
     }
 

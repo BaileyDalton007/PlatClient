@@ -9,10 +9,16 @@
 #include "../ExternalOverlay/DirectX/d3dx9.h"
 
 #pragma comment(lib, "d3d9.lib")
-#pragma comment(lib, "../ExternalOverlay/DirectX/d3dx9.lib")
+//#pragma comment(lib, "../ExternalOverlay/DirectX/d3dx9.lib")
+#pragma comment(lib, "d3dx9.lib")
 
-#include "../ExternalOverlay/DirectX/DxErr.h" //get error from error code
-#pragma comment(lib, "../ExternalOverlay/DirectX/dxerr.lib")
+
+//#include "../ExternalOverlay/DirectX/DxErr.h" //get error from error code
+#include "DxErr.h"
+
+//#pragma comment(lib, "../ExternalOverlay/DirectX/dxerr.lib")
+#pragma comment(lib, "dxerr.lib")
+
 #pragma comment(lib, "legacy_stdio_definitions.lib")
 
 class Paint {
