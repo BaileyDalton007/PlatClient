@@ -156,6 +156,7 @@
   <ItemGroup>
     <ClInclude Include="ExternalOverlay.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="keystrokes.h" />
     <ClInclude Include="Paint.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="rpc_h.h" />
@@ -165,6 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ExternalOverlay.cpp" />
+    <ClCompile Include="keystrokes.cpp" />
     <ClCompile Include="Paint.cpp" />
     <ClCompile Include="rpc_s.cpp" />
     <ClCompile Include="server.cpp" />

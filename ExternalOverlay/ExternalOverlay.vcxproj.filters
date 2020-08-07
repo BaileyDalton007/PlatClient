@@ -28,6 +28,9 @@
     <Filter Include="Source Files\features\youtube">
       <UniqueIdentifier>{67ff9d8a-d493-4a42-aed6-14556d633d07}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\features\keystrokes">
+      <UniqueIdentifier>{43b44a21-d488-4a45-9639-e4a4a8590d45}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ExternalOverlay.h">
@@ -54,6 +57,9 @@
     <ClInclude Include="subCount.h">
       <Filter>Source Files\features\youtube</Filter>
     </ClInclude>
+    <ClInclude Include="keystrokes.h">
+      <Filter>Source Files\features\keystrokes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ExternalOverlay.cpp">
@@ -70,6 +76,9 @@
     </ClCompile>
     <ClCompile Include="subCount.cpp">
       <Filter>Source Files\features\youtube</Filter>
+    </ClCompile>
+    <ClCompile Include="keystrokes.cpp">
+      <Filter>Source Files\features\keystrokes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

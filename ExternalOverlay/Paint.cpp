@@ -7,10 +7,8 @@
 #pragma comment (lib, "User32.lib")
 #include "subCount.h"
 #include "ExternalOverlay.h"
-
-
-
-
+#include <tchar.h>
+#include "keystrokes.h"
 
 int Paint::d3D9Init(HWND hWnd) {
 
@@ -44,9 +42,11 @@ int Paint::d3D9Init(HWND hWnd) {
     //AddFontResourceExA("zoeyfont.ttf", FR_PRIVATE, 0);
     AddFontResourceExA("../ExternalOverlay/zoeyfont.tff", FR_PRIVATE, 0);
 
+
     //D3DXCreateFont(d3dDevice, 25, 0, FW_BOLD, 1, false, DEFAULT_CHARSET, OUT_DEVICE_PRECIS, ANTIALIASED_QUALITY, DEFAULT_PITCH, L"Comic Sans", &mainFont);
     D3DXCreateFont(d3dDevice, 25, 0, FW_BOLD, 1, false, DEFAULT_CHARSET, OUT_DEVICE_PRECIS, ANTIALIASED_QUALITY, DEFAULT_PITCH, L"Zoey Font Regular", &mainFont);
-
+    
+    keystrokesInit(d3dDevice);
 
     return 0;
 
@@ -58,6 +58,7 @@ Paint::Paint(HWND hWnd, HWND targetWnd, int width, int height) {
     this->width = width;
     this->height = height;
     this->targetWnd = targetWnd;
+    this->hWnd = hWnd;
     d3D9Init(hWnd);
 }
 
@@ -66,6 +67,7 @@ int Paint::render()
 {
     if (d3dDevice == nullptr)
         return 1;
+    
     d3dDevice->Clear(0, 0, D3DCLEAR_TARGET, 0, 1.0f, 0);
     d3dDevice->BeginScene();
 
@@ -73,11 +75,12 @@ int Paint::render()
     {
         // left & right click cps counters
         drawText((char*)getlcps(), width / 10, height / 10, 255, 171, 0, 182, mainFont);
-        drawText((char*)getrcps(), (width / 10) + 20, height / 10, 255, 171, 0, 182, mainFont);
+        drawText((char*)getrcps(), (width / 10 + 20), height / 10, 255, 171, 0, 182, mainFont);
 
         // Youtube
         drawText((char*)getYoutubeData(), width / 10, (height * 0.80), 255, 171, 0, 182, mainFont);
 
+        drawKeystrokes(d3dDevice, width, height);
 
     }
 

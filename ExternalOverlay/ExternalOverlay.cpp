@@ -12,7 +12,8 @@
 #include <WinUser.h>
 #include <wingdi.h>
 #include <vector>
-#include "subCount.h"
+#include <tchar.h>
+
 #pragma comment (lib, "User32.lib")
 #pragma comment (lib, "Gdi32.lib")
 
@@ -71,8 +72,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
         MoveWindow(overlayHWND, rect.left, rect.top, width, height, true);
 
     }
-
     return (int)msg.wParam;
+
 }
 
 
@@ -138,8 +139,26 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //
 //
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) {
+    int wmId, wmEvent;
+
     switch (message) {
+    case WM_COMMAND:
+       wmId = LOWORD(wParam);
+       wmEvent = HIWORD(wParam);
+        // Parse the menu selections:
+        switch (wmId)
+        {
+        case IDM_ABOUT:
+            break;
+        case IDM_EXIT:
+            DestroyWindow(hWnd);
+            break;
+        default:
+            return DefWindowProc(hWnd, message, wParam, lParam);
+        }
+        break;
     case WM_PAINT:
+
         paint.render();
         break;
     case WM_DESTROY:

@@ -38,8 +38,6 @@ std::string channelData(){
             subCount.insert(subCount.begin() + subCount.length(), 'M');
         }
         std::string data(channelName + " : " + subCount);
-        //std::string ytdata(channelName);
-        //const char* data = ytdata.c_str();
 
         return data;
     }
@@ -55,6 +53,5 @@ const char* charData = youtubeData.c_str();
 
 const char* getYoutubeData()
 {
-    //const char* data = channelData();
     return charData;
 }

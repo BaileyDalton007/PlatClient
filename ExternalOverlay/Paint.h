@@ -28,13 +28,17 @@ private:
     D3DPRESENT_PARAMETERS d3dparams; //parameters for creating device
     ID3DXFont* mainFont= 0; // font used when displaying text
     HWND targetWnd;
-    int width;
-    int height;
+    HWND hWnd;
 
     int d3D9Init(HWND hWnd);
     void drawText(char* String, int x, int y, int a, int r, int g, int b, ID3DXFont* font);
+
 public:
     Paint();
     Paint(HWND hWnd, HWND targetWnd, int width, int height);
     int render();
+    int width;
+    int height;
+
+
 };
