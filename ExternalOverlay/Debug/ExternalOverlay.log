@@ -1,4 +1,11 @@
 ﻿  Using triplet "x86-windows" from "C:\Users\Bailey\vcpkg\installed\x86-windows\"
   keystrokes.cpp
 C:\Users\Bailey\vcpkg\installed\x86-windows\include\boost\bind.hpp(41): message : The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\keystrokes.cpp(156,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\keystrokes.cpp(160,69): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\keystrokes.cpp(164,69): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\keystrokes.cpp(177,91): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\keystrokes.cpp(177,65): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\keystrokes.cpp(178,92): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\keystrokes.cpp(178,65): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   ExternalOverlay.vcxproj -> C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\Debug\ExternalOverlay.exe

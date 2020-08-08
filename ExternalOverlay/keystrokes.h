@@ -21,7 +21,7 @@
 
 int keystrokesInit(IDirect3DDevice9Ex* device);
 
-int drawKeystrokes(IDirect3DDevice9Ex* device, int width, int height);
+int drawKeystrokes(IDirect3DDevice9Ex* device, int width, int height, ID3DXFont* font);
 
 int drawW(IDirect3DDevice9Ex* device, int width, int height);
 int drawA(IDirect3DDevice9Ex* device, int width, int height);

@@ -74,13 +74,13 @@ int Paint::render()
     if (targetWnd == GetForegroundWindow())
     {
         // left & right click cps counters
-        drawText((char*)getlcps(), width / 10, height / 10, 255, 171, 0, 182, mainFont);
-        drawText((char*)getrcps(), (width / 10 + 20), height / 10, 255, 171, 0, 182, mainFont);
+        //drawText((char*)getlcps(), width / 10, height / 10, 255, 171, 0, 182, mainFont);
+        //drawText((char*)getrcps(), (width / 10 + 20), height / 10, 255, 171, 0, 182, mainFont);
 
         // Youtube
         drawText((char*)getYoutubeData(), width / 10, (height * 0.80), 255, 171, 0, 182, mainFont);
 
-        drawKeystrokes(d3dDevice, width, height);
+        drawKeystrokes(d3dDevice, width, height, mainFont);
 
     }
 
