@@ -151,6 +151,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) 
         case IDM_ABOUT:
             break;
         case IDM_EXIT:
+            RemoveFontResourceExA("../ExternalOverlay/zoeyfont3.tff", FR_PRIVATE, 0);
             DestroyWindow(hWnd);
             break;
         default:
@@ -162,6 +163,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) 
         paint.render();
         break;
     case WM_DESTROY:
+        RemoveFontResourceExA("../ExternalOverlay/zoeyfont3.tff", FR_PRIVATE, 0);
         PostQuitMessage(0);
         break;
     default:

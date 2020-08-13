@@ -1,5 +1,5 @@
 ﻿  Using triplet "x64-windows" from "C:\Users\Bailey\vcpkg\installed\x64-windows\"
-  client.cpp
-  rpcClient_c.cpp
+  configParser.cpp
+  main.cpp
   Generating Code...
   PlatClient.vcxproj -> C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\x64\Debug\Backend.exe

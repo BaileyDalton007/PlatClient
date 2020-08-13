@@ -153,6 +153,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="client.cpp" />
+    <ClCompile Include="configParser.cpp" />
     <ClCompile Include="cps.cpp" />
     <ClCompile Include="discord-rpc\src\connection_win.cpp" />
     <ClCompile Include="discord-rpc\src\discord_register_win.cpp" />
@@ -167,6 +168,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="client.h" />
+    <ClInclude Include="configParser.h" />
     <ClInclude Include="cps.h" />
     <ClInclude Include="discord-rpc\src\backoff.h" />
     <ClInclude Include="discord-rpc\src\msg_queue.h" />
@@ -182,6 +184,9 @@
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/app_config %(AdditionalOptions)</AdditionalOptions>
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">/app_config %(AdditionalOptions)</AdditionalOptions>
     </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="config.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

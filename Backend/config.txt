@@ -1,0 +1,22 @@
+This is the config file for Plat Client, changing things in here may cause errors in
+your program's runtime. Feel free to see discord to ask questions or read up on
+the full explaination of all of these settings.
+
+CONFIG FILE IS ONLY UPDATED ON PROGRAM REBOOT. Be sure to close and reopen the client
+for changes to occur
+
+Under each option in brackets [], there are the option values that a setting can have
+
+
+zoomEnabled = 1
+[0, 1]
+toggles if the zoom function is active or not
+
+discordPresence = 1
+[0, 1]
+toggles if the Clients Discord Rich Presence is displayed (the fancy status thing)
+
+zoomKey = 0x11
+[see MSDN page below for hex codes (will start with "0x")]
+sets the key to hold down for zoom function the default is the ctrl key (0x11), see 
+https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes for other keycodes
