@@ -1,4 +1,8 @@
 #pragma once
 
 #include "resource.h"
-const char* getSubCount();
+#include "configParserOverlay.h"
+
+
+
+Config returnConfig();

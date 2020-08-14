@@ -31,6 +31,9 @@
     <Filter Include="Source Files\features\keystrokes">
       <UniqueIdentifier>{43b44a21-d488-4a45-9639-e4a4a8590d45}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\config">
+      <UniqueIdentifier>{fc74b063-328d-488d-8b56-b76501cf43ed}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ExternalOverlay.h">
@@ -60,6 +63,9 @@
     <ClInclude Include="keystrokes.h">
       <Filter>Source Files\features\keystrokes</Filter>
     </ClInclude>
+    <ClInclude Include="configParserOverlay.h">
+      <Filter>Source Files\config</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ExternalOverlay.cpp">
@@ -79,6 +85,9 @@
     </ClCompile>
     <ClCompile Include="keystrokes.cpp">
       <Filter>Source Files\features\keystrokes</Filter>
+    </ClCompile>
+    <ClCompile Include="configParserOverlay.cpp">
+      <Filter>Source Files\config</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

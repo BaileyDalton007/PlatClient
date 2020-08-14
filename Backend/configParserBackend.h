@@ -1,11 +1,11 @@
 #pragma once
-#include "configParser.h"
+#include "configParserBackend.h"
 
 struct Config {
     bool zoomBool;
     bool discordRPCBool;
     int zoomKey;
-
+    int displayScale;
 };
 
 Config getConfig(Config configObj);

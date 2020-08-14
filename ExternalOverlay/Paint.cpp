@@ -9,6 +9,7 @@
 #include "ExternalOverlay.h"
 #include <tchar.h>
 #include "keystrokes.h"
+#include "configParserOverlay.h"
 
 //Global Sprites
 LPD3DXSPRITE ytSprite = NULL;
@@ -16,6 +17,8 @@ IDirect3DTexture9* ytTexture = NULL;
 
 ::D3DXMATRIX ytScalingMatrix;
 
+Config paintConfig{};
+float scaleYT;
 
 int Paint::d3D9Init(HWND hWnd) {
 
@@ -46,6 +49,11 @@ int Paint::d3D9Init(HWND hWnd) {
         exit(1);*/
     }
 
+    paintConfig = getConfig(paintConfig);
+
+    float q = float(paintConfig.displayScale);
+    scaleYT = q / 10;
+
     //AddFontResourceExA("zoeyfont.ttf", FR_PRIVATE, 0);
     AddFontResourceExA("../ExternalOverlay/zoeyfont3.tff", FR_PRIVATE, 0);
 
@@ -53,7 +61,7 @@ int Paint::d3D9Init(HWND hWnd) {
     //D3DXCreateFont(d3dDevice, 25, 0, FW_BOLD, 1, false, DEFAULT_CHARSET, OUT_DEVICE_PRECIS, ANTIALIASED_QUALITY, DEFAULT_PITCH, L"Comic Sans", &mainFont);
     D3DXCreateFont(d3dDevice, 25, 0, FW_BOLD, 1, false, DEFAULT_CHARSET, OUT_DEVICE_PRECIS, ANTIALIASED_QUALITY, DEFAULT_PITCH, L"Zoey Font 3 Regular", &mainFont);
     
-    keystrokesInit(d3dDevice);
+    keystrokesInit(d3dDevice, width, height);
     D3DXCreateTextureFromFile(d3dDevice, L"assests/youtube.png", &ytTexture);
     D3DXCreateSprite(d3dDevice, &ytSprite);
 
@@ -74,6 +82,7 @@ Paint::Paint(HWND hWnd, HWND targetWnd, int width, int height) {
 
 int Paint::render()
 {
+
     if (d3dDevice == nullptr)
         return 1;
     
@@ -82,18 +91,18 @@ int Paint::render()
 
     if (targetWnd == GetForegroundWindow())
     {
-        // left & right click cps counters
-        //drawText((char*)getlcps(), width / 10, height / 10, 255, 171, 0, 182, mainFont);
-        //drawText((char*)getrcps(), (width / 10 + 20), height / 10, 255, 171, 0, 182, mainFont);
-
         // Youtube
-        ::D3DXMatrixScaling(&ytScalingMatrix, 0.4f, 0.4f, 1.0f);
-        ytSprite->Begin(NULL);
-        ytSprite->Draw(ytTexture, NULL, NULL, &D3DXVECTOR3(float(10)/0.4, float((height - 70)/0.4), 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
-        ytSprite->SetTransform(&ytScalingMatrix);
-        ytSprite->End();
+        const char* ytdata = getYoutubeData();
+        if (*ytdata != '\0')
+        {
+            ::D3DXMatrixScaling(&ytScalingMatrix, scaleYT, 0.4f, 1.0f);
+            ytSprite->Begin(NULL);
+            ytSprite->Draw(ytTexture, NULL, NULL, &D3DXVECTOR3(float(10)/ scaleYT, float((height - 70)/0.4), 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
+            ytSprite->SetTransform(&ytScalingMatrix);
+            ytSprite->End();
 
-        drawText((char*)getYoutubeData(), 100, (height - 55), 255, 237, 90, 255, mainFont);
+            drawText((char*)getYoutubeData(), 100 + scaleYT * 80, (height - 55), 255, 237, 90, 255, mainFont);
+        }
 
         //Keystrokes
         drawKeystrokes(d3dDevice, width, height, mainFont);

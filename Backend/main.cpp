@@ -12,7 +12,7 @@
 #include <Windows.h>
 #include <thread>
 #include "cps.h"
-#include "configParser.h"
+#include "configParserBackend.h"
 
 Discord* g_Discord;
 uintptr_t fovAddr;
@@ -30,6 +30,8 @@ int main()
 		g_Discord->Update();
 	}
 
+	float thing = float(config.displayScale);
+	std::cout << thing / 10 << std::endl;
 	//Get ProcID of the target Process
 	static DWORD procId = mem::GetProcId(L"Minecraft.Windows.exe");
 
@@ -68,7 +70,6 @@ int main()
 
 		updateCPS();
 		updateRCPS();
-
 
 		if (config.zoomBool == true)
 		{

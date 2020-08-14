@@ -55,10 +55,6 @@ void updateCPS()
 		}
 	}
 	int size = (int)clicks.size();
-	//int size = (int)4;
-
-	//char acps[1000];
-	//_itoa_s(size, acps, 10);
 
 	cps = (const char*)cpsCodes[size];
 }
@@ -110,10 +106,6 @@ void updateRCPS()
 		}
 	}
 	int size = (int)Rclicks.size();
-	//int size = (int)4;
-
-	//char acps[1000];
-	//_itoa_s(size, acps, 10);
 
 	Rcps = (const char*)cpsCodes[size];
 }

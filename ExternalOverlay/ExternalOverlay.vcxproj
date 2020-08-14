@@ -154,6 +154,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="configParserOverlay.h" />
     <ClInclude Include="ExternalOverlay.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="keystrokes.h" />
@@ -165,6 +166,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="configParserOverlay.cpp" />
     <ClCompile Include="ExternalOverlay.cpp" />
     <ClCompile Include="keystrokes.cpp" />
     <ClCompile Include="Paint.cpp" />

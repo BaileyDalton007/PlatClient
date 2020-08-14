@@ -64,7 +64,7 @@
     <ClCompile Include="cps.cpp">
       <Filter>Source Files\features\cpsCounter</Filter>
     </ClCompile>
-    <ClCompile Include="configParser.cpp">
+    <ClCompile Include="configParserBackend.cpp">
       <Filter>Source Files\config</Filter>
     </ClCompile>
   </ItemGroup>
@@ -99,7 +99,7 @@
     <ClInclude Include="cps.h">
       <Filter>Source Files\features\cpsCounter</Filter>
     </ClInclude>
-    <ClInclude Include="configParser.h">
+    <ClInclude Include="configParserBackend.h">
       <Filter>Source Files\config</Filter>
     </ClInclude>
   </ItemGroup>
@@ -107,10 +107,5 @@
     <Midl Include="rpcClient.idl">
       <Filter>Source Files\rpcClient</Filter>
     </Midl>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="config.txt">
-      <Filter>Source Files\config</Filter>
-    </Text>
   </ItemGroup>
 </Project>

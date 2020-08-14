@@ -1,3 +1,5 @@
 ﻿  Using triplet "x86-windows" from "C:\Users\Bailey\vcpkg\installed\x86-windows\"
-  ExternalOverlay.cpp
+  Paint.cpp
+C:\Users\Bailey\vcpkg\installed\x86-windows\include\boost\bind.hpp(41): message : The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\Paint.cpp(104,51): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   ExternalOverlay.vcxproj -> C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\Debug\ExternalOverlay.exe

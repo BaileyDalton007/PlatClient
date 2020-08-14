@@ -2,24 +2,12 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-#include "configParser.h"
+#include "configParserBackend.h"
 
 using namespace std;
 
-int str2int(const std::string& str) {
-    std::stringstream ss(str);
-    int num;
-    if ((ss >> num).fail())
-    {
-        //ERROR 
-    }
-    return num;
-}
-
-
-
 void loadConfig(Config& config) {
-    ifstream fin("config.txt");
+    ifstream fin("../config.txt");
     string line;
     std::string a;
     while (getline(fin, line)) {
@@ -37,6 +25,20 @@ void loadConfig(Config& config) {
             sin >> a;
             int b = stoi(a, 0, 16);
             config.zoomKey = b;
+        }
+        else if (line.find("displayScale") != -1)
+        {
+            sin >> a;
+            int b;
+            try
+            {
+                b = stoi(a, 0, 10);
+            }
+            catch (...) {
+                b = 200;
+            }
+            config.displayScale = b;
+
         }
 
     }

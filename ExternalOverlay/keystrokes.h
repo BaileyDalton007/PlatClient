@@ -19,7 +19,7 @@
 
 #pragma comment(lib, "legacy_stdio_definitions.lib")
 
-int keystrokesInit(IDirect3DDevice9Ex* device);
+int keystrokesInit(IDirect3DDevice9Ex* device, int width, int height);
 
 int drawKeystrokes(IDirect3DDevice9Ex* device, int width, int height, ID3DXFont* font);
 
