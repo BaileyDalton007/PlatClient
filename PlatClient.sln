@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{413634E2-8408-449E-8298-50648F69841E}"
 	ProjectSection(SolutionItems) = preProject
 		config.txt = config.txt
+		pointers.json = pointers.json
 	EndProjectSection
 EndProject
 Global

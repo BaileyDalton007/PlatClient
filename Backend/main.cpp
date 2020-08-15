@@ -13,6 +13,7 @@
 #include <thread>
 #include "cps.h"
 #include "configParserBackend.h"
+#include "pointerParser.h"
 
 Discord* g_Discord;
 uintptr_t fovAddr;
@@ -23,6 +24,9 @@ int main()
 	Config config{};
 	config = getConfig(config);
 
+	Pointer pointerJson{};
+	pointerJson = getPointers(pointerJson);
+
 	if (config.discordRPCBool == true)
 	{
 		//Discord Rich Presence
@@ -30,8 +34,6 @@ int main()
 		g_Discord->Update();
 	}
 
-	float thing = float(config.displayScale);
-	std::cout << thing / 10 << std::endl;
 	//Get ProcID of the target Process
 	static DWORD procId = mem::GetProcId(L"Minecraft.Windows.exe");
 
@@ -44,11 +46,17 @@ int main()
 	if (config.zoomBool == true)
 	{
 		//Resolve base address of pointer chain
-		uintptr_t fovDynamicPtrBaseAddr = moduleBase + 0x0365F7D8;
+		//0x0365F7D8
+		uintptr_t fovDynamicPtrBaseAddr = moduleBase + pointerJson.fovBase;
 		uintptr_t handDynamicPtrBaseAddr = moduleBase + 0x036D3C58;
 
 		//Resolve zoom pointer chain
-		std::vector<unsigned int> fovOffsets = { 0x0, 0x528, 0x110, 0xE0, 0xB0, 0x120, 0xF0 };
+		for (int i = 0; i < pointerJson.fovOffsets.size(); i++)
+		{
+			std::cout << pointerJson.fovOffsets[i] << std::endl;
+		}
+		//std::vector<unsigned int> fovOffsets = { 0x0, 0x528, 0x110, 0xE0, 0xB0, 0x120, 0xF0 };
+		std::vector<unsigned int> fovOffsets = pointerJson.fovOffsets;
 		std::vector<unsigned int> handOffsets = { 0x120, 0xC8, 0x940, 0xE0, 0x8, 0xCE8, 0xE8 };
 
 

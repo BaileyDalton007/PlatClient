@@ -165,6 +165,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mem.cpp" />
     <ClCompile Include="rpcClient_c.cpp" />
+    <ClCompile Include="pointerParser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="client.h" />
@@ -175,6 +176,7 @@
     <ClInclude Include="discord-rpc\src\rpc_connection.h" />
     <ClInclude Include="discord-rpc\src\serialization.h" />
     <ClInclude Include="Discord.h" />
+    <ClInclude Include="pointerParser.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="mem.h" />
     <ClInclude Include="rpcClient_h.h" />

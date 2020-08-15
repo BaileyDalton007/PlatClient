@@ -26,20 +26,6 @@ void loadConfig(Config& config) {
             int b = stoi(a, 0, 16);
             config.zoomKey = b;
         }
-        else if (line.find("displayScale") != -1)
-        {
-            sin >> a;
-            int b;
-            try
-            {
-                b = stoi(a, 0, 10);
-            }
-            catch (...) {
-                b = 200;
-            }
-            config.displayScale = b;
-
-        }
 
     }
 }

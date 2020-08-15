@@ -26,6 +26,9 @@
     <Filter Include="Source Files\config">
       <UniqueIdentifier>{c0f548cc-ac0f-4d54-b191-4e41884464bb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\pointers">
+      <UniqueIdentifier>{835646ea-bfb7-456d-afda-f47ee667ca20}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -67,6 +70,9 @@
     <ClCompile Include="configParserBackend.cpp">
       <Filter>Source Files\config</Filter>
     </ClCompile>
+    <ClCompile Include="pointerParser.cpp">
+      <Filter>Source Files\pointers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mem.h">
@@ -101,6 +107,9 @@
     </ClInclude>
     <ClInclude Include="configParserBackend.h">
       <Filter>Source Files\config</Filter>
+    </ClInclude>
+    <ClInclude Include="pointerParser.h">
+      <Filter>Source Files\pointers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
