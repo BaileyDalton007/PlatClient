@@ -7,6 +7,7 @@
 #include "subCount.h"
 #include "ExternalOverlay.h"
 #include <tchar.h>
+#include "cps.h"
 
 float wPosX;
 float wPosY;
@@ -185,8 +186,8 @@ Paint paintThing;
 
 int drawCPS(IDirect3DDevice9Ex* device, int width, int height, ID3DXFont* font)
 {
-    paintThing.drawText((char*)getlcps(), (wPosX - 70) + 45, (wPosY + 140) + 30, 255, 255, 255, 255, font);
-    paintThing.drawText((char*)getrcps(), (wPosX - 70) + 150, (wPosY + 140) + 30, 255, 255, 255, 255, font);
+    paintThing.drawText((char*)getCPS(), (wPosX - 70) + 45, (wPosY + 140) + 30, 255, 255, 255, 255, font);
+    paintThing.drawText((char*)getRCPS(), (wPosX - 70) + 150, (wPosY + 140) + 30, 255, 255, 255, 255, font);
 
     return 0;
 }

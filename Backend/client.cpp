@@ -4,12 +4,10 @@
 #include <stdio.h>
 #include "main.h"
 #include <vector>
-#include "cps.h"
 
-const char* lcps = "unset";
-const char* rcps = "unset";
+const char* menustate;
 
-std::vector<const char*>rpcPacket(2, "unset");
+std::vector<const char*>rpcPacket(1, "unset");
 
 void rpcClientMain(void* data)
 {
@@ -22,11 +20,9 @@ void rpcClientMain(void* data)
     while (1) {
         for (int i = 0; i < rpcPacket.size(); i++)
         {
-            const char* lcps = getCPS();
-            const char* rcps = getRCPS();
+            const char* menustate = getCurrMenu();
             
-            rpcPacket[0] = lcps;
-            rpcPacket[1] = rcps;
+            rpcPacket[0] = menustate;
 
 
 

@@ -13,6 +13,12 @@ struct Pointer {
 
 	int fovBase;
 	std::vector<unsigned int> fovOffsets;
+
+	int handBase;
+	std::vector<unsigned int> handOffsets;
+
+	int menuBase;
+	std::vector<unsigned int> menuOffsets;
 };
 
 Pointer getPointers(Pointer ptrobj);

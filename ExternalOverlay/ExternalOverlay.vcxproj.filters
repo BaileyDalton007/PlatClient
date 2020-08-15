@@ -34,6 +34,9 @@
     <Filter Include="Source Files\config">
       <UniqueIdentifier>{fc74b063-328d-488d-8b56-b76501cf43ed}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\features\cps">
+      <UniqueIdentifier>{1fc7aebb-623e-43ea-84d2-8849fad5e28e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ExternalOverlay.h">
@@ -66,6 +69,9 @@
     <ClInclude Include="configParserOverlay.h">
       <Filter>Source Files\config</Filter>
     </ClInclude>
+    <ClInclude Include="cps.h">
+      <Filter>Source Files\features\cps</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ExternalOverlay.cpp">
@@ -88,6 +94,9 @@
     </ClCompile>
     <ClCompile Include="configParserOverlay.cpp">
       <Filter>Source Files\config</Filter>
+    </ClCompile>
+    <ClCompile Include="cps.cpp">
+      <Filter>Source Files\features\cps</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

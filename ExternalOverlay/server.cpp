@@ -5,10 +5,9 @@
 #include <vector>
 
 int packetIter = 0;
-const char* rpcData[2] = { "unset", "unset"};
+const char* rpcData[1] = { "unset"};
 
-const char* rcps;
-const char* lcps;
+const char* menustate;
 
 // Server function.
 void Output(const char* szOutput)
@@ -22,16 +21,10 @@ void Output(const char* szOutput)
 
 }
 
-const char* getlcps()
+const char* getmenustate()
 {
-    rcps = reinterpret_cast<const char*>(rpcData[0]);
-    return rcps;
-}
-
-const char* getrcps()
-{
-    lcps = reinterpret_cast<const char*>(rpcData[1]);
-    return lcps;
+    menustate = reinterpret_cast<const char*>(rpcData[0]);
+    return menustate;
 }
 
 // Naive security callback.

@@ -11,13 +11,15 @@
 #include <chrono>
 #include <Windows.h>
 #include <thread>
-#include "cps.h"
 #include "configParserBackend.h"
 #include "pointerParser.h"
 
 Discord* g_Discord;
 uintptr_t fovAddr;
 uintptr_t handAddr;
+uintptr_t menuAddr;
+
+int currMenu;
 
 int main()
 {
@@ -43,21 +45,20 @@ int main()
 	//Get Handle to Process
 	static HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, NULL, procId);
 
+	uintptr_t menuDynamicPtrBaseAddr = moduleBase + pointerJson.menuBase;
+	std::vector<unsigned int> menuOffsets = pointerJson.menuOffsets;
+	menuAddr = mem::FindDMAAddy(hProcess, menuDynamicPtrBaseAddr, menuOffsets);
+
+
 	if (config.zoomBool == true)
 	{
 		//Resolve base address of pointer chain
-		//0x0365F7D8
 		uintptr_t fovDynamicPtrBaseAddr = moduleBase + pointerJson.fovBase;
-		uintptr_t handDynamicPtrBaseAddr = moduleBase + 0x036D3C58;
+		uintptr_t handDynamicPtrBaseAddr = moduleBase + pointerJson.handBase;
 
 		//Resolve zoom pointer chain
-		for (int i = 0; i < pointerJson.fovOffsets.size(); i++)
-		{
-			std::cout << pointerJson.fovOffsets[i] << std::endl;
-		}
-		//std::vector<unsigned int> fovOffsets = { 0x0, 0x528, 0x110, 0xE0, 0xB0, 0x120, 0xF0 };
 		std::vector<unsigned int> fovOffsets = pointerJson.fovOffsets;
-		std::vector<unsigned int> handOffsets = { 0x120, 0xC8, 0x940, 0xE0, 0x8, 0xCE8, 0xE8 };
+		std::vector<unsigned int> handOffsets = pointerJson.handOffsets;
 
 
 		fovAddr = mem::FindDMAAddy(hProcess, fovDynamicPtrBaseAddr, fovOffsets);
@@ -73,11 +74,8 @@ int main()
 	DWORD showHand = 0;
 
 	while (true) {
-		getCurrClick();
-		getCurrRClick();
-
-		updateCPS();
-		updateRCPS();
+		
+		ReadProcessMemory(hProcess, (BYTE*)menuAddr, &currMenu, sizeof(currMenu), nullptr);
 
 		if (config.zoomBool == true)
 		{
@@ -109,6 +107,16 @@ int main()
 
 	getchar();
 	return 0;
+}
+
+const char* getCurrMenu()
+{
+	if (currMenu == 1) {
+		return (const char*)"1";
+	}
+	else {
+		return (const char*)"0";
+	}
 }
 
 

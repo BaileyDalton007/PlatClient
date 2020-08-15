@@ -11,9 +11,6 @@
     <Filter Include="Source Files\features">
       <UniqueIdentifier>{87af82c6-5fd1-4b4e-bcb1-ecdcb4db6710}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\features\cpsCounter">
-      <UniqueIdentifier>{505889d0-9248-4373-9c3f-3e1afa217b84}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\memory">
       <UniqueIdentifier>{77849c74-9fc0-4e23-aa8b-b54d0c54a4a9}</UniqueIdentifier>
     </Filter>
@@ -64,9 +61,6 @@
     <ClCompile Include="client.cpp">
       <Filter>Source Files\rpcClient</Filter>
     </ClCompile>
-    <ClCompile Include="cps.cpp">
-      <Filter>Source Files\features\cpsCounter</Filter>
-    </ClCompile>
     <ClCompile Include="configParserBackend.cpp">
       <Filter>Source Files\config</Filter>
     </ClCompile>
@@ -101,9 +95,6 @@
     </ClInclude>
     <ClInclude Include="client.h">
       <Filter>Source Files\rpcClient</Filter>
-    </ClInclude>
-    <ClInclude Include="cps.h">
-      <Filter>Source Files\features\cpsCounter</Filter>
     </ClInclude>
     <ClInclude Include="configParserBackend.h">
       <Filter>Source Files\config</Filter>

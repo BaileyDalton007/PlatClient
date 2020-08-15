@@ -10,6 +10,7 @@
 #include <tchar.h>
 #include "keystrokes.h"
 #include "configParserOverlay.h"
+#include "cps.h"
 
 //Global Sprites
 LPD3DXSPRITE ytSprite = NULL;
@@ -79,6 +80,7 @@ Paint::Paint(HWND hWnd, HWND targetWnd, int width, int height) {
     d3D9Init(hWnd);
 }
 
+const char* zero = "0";
 
 int Paint::render()
 {
@@ -88,25 +90,36 @@ int Paint::render()
     
     d3dDevice->Clear(0, 0, D3DCLEAR_TARGET, 0, 1.0f, 0);
     d3dDevice->BeginScene();
-
-    if (targetWnd == GetForegroundWindow())
+    if (paintConfig.showCPS == 1)
     {
-        // Youtube
-        const char* ytdata = getYoutubeData();
-        if (*ytdata != '\0')
+        getCurrClick();
+        getCurrRClick();
+
+        updateCPS();
+        updateRCPS();
+    }
+
+    if (strcmp(getmenustate(), zero) == 0)
+    {
+        if (targetWnd == GetForegroundWindow())
         {
-            ::D3DXMatrixScaling(&ytScalingMatrix, scaleYT, 0.4f, 1.0f);
-            ytSprite->Begin(NULL);
-            ytSprite->Draw(ytTexture, NULL, NULL, &D3DXVECTOR3(float(10)/ scaleYT, float((height - 70)/0.4), 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
-            ytSprite->SetTransform(&ytScalingMatrix);
-            ytSprite->End();
+            // Youtube
+            const char* ytdata = getYoutubeData();
+            if (*ytdata != '\0')
+            {
+                ::D3DXMatrixScaling(&ytScalingMatrix, scaleYT, 0.4f, 1.0f);
+                ytSprite->Begin(NULL);
+                ytSprite->Draw(ytTexture, NULL, NULL, &D3DXVECTOR3(float(10) / scaleYT, float((height - 70) / 0.4), 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
+                ytSprite->SetTransform(&ytScalingMatrix);
+                ytSprite->End();
 
-            drawText((char*)getYoutubeData(), 100 + scaleYT * 80, (height - 55), 255, 237, 90, 255, mainFont);
+                drawText((char*)getYoutubeData(), 100 + scaleYT * 80, (height - 55), 255, 237, 90, 255, mainFont);
+            }
+
+            //Keystrokes
+            drawKeystrokes(d3dDevice, width, height, mainFont);
+
         }
-
-        //Keystrokes
-        drawKeystrokes(d3dDevice, width, height, mainFont);
-
     }
 
     d3dDevice->EndScene();
