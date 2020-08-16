@@ -56,7 +56,7 @@ int Paint::d3D9Init(HWND hWnd) {
     scaleYT = q / 10;
 
     //AddFontResourceExA("zoeyfont.ttf", FR_PRIVATE, 0);
-    AddFontResourceExA("../ExternalOverlay/zoeyfont3.tff", FR_PRIVATE, 0);
+    AddFontResourceExA("assests/zoeyfont3.tff", FR_PRIVATE, 0);
 
 
     //D3DXCreateFont(d3dDevice, 25, 0, FW_BOLD, 1, false, DEFAULT_CHARSET, OUT_DEVICE_PRECIS, ANTIALIASED_QUALITY, DEFAULT_PITCH, L"Comic Sans", &mainFont);

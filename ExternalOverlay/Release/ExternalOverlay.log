@@ -1,63 +1,8 @@
-﻿  Processing .\rpc.idl
-  rpc.idl
-  ExternalOverlay.cpp
-  Paint.cpp
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xstring(2395,23): warning C4244: 'argument': conversion from 'wchar_t' to 'const _Elem', possible loss of data
-          with
-          [
-              _Elem=char
-          ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xstring(2406): message : see reference to function template instantiation 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct<wchar_t*>(_Iter,const _Iter,std::input_iterator_tag)' being compiled
-          with
-          [
-              _Iter=wchar_t *
-          ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xstring(2406): message : see reference to function template instantiation 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct<wchar_t*>(_Iter,const _Iter,std::input_iterator_tag)' being compiled
-          with
-          [
-              _Iter=wchar_t *
-          ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xstring(2386): message : see reference to function template instantiation 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct<wchar_t*>(const _Iter,const _Iter,std::forward_iterator_tag)' being compiled
-          with
-          [
-              _Iter=wchar_t *
-          ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xstring(2386): message : see reference to function template instantiation 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct<wchar_t*>(const _Iter,const _Iter,std::forward_iterator_tag)' being compiled
-          with
-          [
-              _Iter=wchar_t *
-          ]
-C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\Paint.cpp(33): message : see reference to function template instantiation 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(_Iter,_Iter,const _Alloc &)' being compiled
-          with
-          [
-              _Elem=wchar_t,
-              _Iter=std::_String_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
-              _Alloc=std::allocator<char>
-          ]
-C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\Paint.cpp(33): message : see reference to function template instantiation 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(_Iter,_Iter,const _Alloc &)' being compiled
-          with
-          [
-              _Elem=wchar_t,
-              _Iter=std::_String_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
-              _Alloc=std::allocator<char>
-          ]
-  rpc_s.cpp
-  server.cpp
-ExternalOverlay.obj : error LNK2001: unresolved external symbol __imp__FindWindowA@8
-ExternalOverlay.obj : error LNK2001: unresolved external symbol __imp__CreateSolidBrush@4
-ExternalOverlay.obj : error LNK2001: unresolved external symbol __imp__PostQuitMessage@4
-ExternalOverlay.obj : error LNK2001: unresolved external symbol __imp__LoadCursorW@8
-ExternalOverlay.obj : error LNK2001: unresolved external symbol __imp__TranslateMessage@4
-ExternalOverlay.obj : error LNK2001: unresolved external symbol __imp__SetLayeredWindowAttributes@16
-ExternalOverlay.obj : error LNK2001: unresolved external symbol __imp__MoveWindow@24
-ExternalOverlay.obj : error LNK2001: unresolved external symbol __imp__DispatchMessageW@4
-ExternalOverlay.obj : error LNK2001: unresolved external symbol __imp__ShowWindow@8
-ExternalOverlay.obj : error LNK2001: unresolved external symbol __imp__RegisterClassExW@4
-ExternalOverlay.obj : error LNK2001: unresolved external symbol __imp__CreateWindowExW@48
-ExternalOverlay.obj : error LNK2001: unresolved external symbol __imp__GetWindowRect@8
-ExternalOverlay.obj : error LNK2001: unresolved external symbol __imp__DefWindowProcW@16
-ExternalOverlay.obj : error LNK2001: unresolved external symbol __imp__GetMessageW@16
-Paint.obj : error LNK2001: unresolved external symbol __imp__GetForegroundWindow@0
-dxerr.lib(dxerrw.obj) : error LNK2001: unresolved external symbol __imp__GetForegroundWindow@0
-dxerr.lib(dxerrw.obj) : error LNK2001: unresolved external symbol __imp__MessageBoxW@16
-C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\Release\ExternalOverlay.exe : fatal error LNK1120: 16 unresolved externals
+﻿  Using triplet "x86-windows" from "C:\Users\Bailey\vcpkg\installed\x86-windows\"
+  configParserOverlay.cpp
+  Generating code
+  3 of 1183 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  ExternalOverlay.vcxproj -> C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\Release\ExternalOverlay.exe

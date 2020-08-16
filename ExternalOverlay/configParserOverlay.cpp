@@ -7,7 +7,7 @@
 using namespace std;
 
 void loadConfig(Config& config) {
-    ifstream fin("../config.txt");
+    ifstream fin("config.txt");
     string line;
     std::string a;
     std::string c;

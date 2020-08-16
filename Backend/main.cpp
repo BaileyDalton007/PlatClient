@@ -66,8 +66,9 @@ int main()
 	}
 	std::cout << "Memory Regions found" << std::endl;
 
+	HideConsole();
 
-	startRPCClientThread();
+	//startRPCClientThread();
 
 	float currFov;
 	DWORD hideHand = 1;
@@ -75,7 +76,7 @@ int main()
 
 	while (true) {
 		
-		ReadProcessMemory(hProcess, (BYTE*)menuAddr, &currMenu, sizeof(currMenu), nullptr);
+		//ReadProcessMemory(hProcess, (BYTE*)menuAddr, &currMenu, sizeof(currMenu), nullptr);
 
 		if (config.zoomBool == true)
 		{
@@ -105,7 +106,7 @@ int main()
 		}
 	}
 
-	getchar();
+	//getchar();
 	return 0;
 }
 
@@ -117,6 +118,16 @@ const char* getCurrMenu()
 	else {
 		return (const char*)"0";
 	}
+}
+
+void HideConsole()
+{
+	::ShowWindow(::GetConsoleWindow(), SW_HIDE);
+}
+
+void ShowConsole()
+{
+	::ShowWindow(::GetConsoleWindow(), SW_SHOW);
 }
 
 

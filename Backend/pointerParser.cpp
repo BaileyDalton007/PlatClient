@@ -15,7 +15,7 @@ namespace pt = boost::property_tree;
 pt::ptree root;      // Creates a root
 
 void readJson(Pointer& pointer) {
-    pt::read_json("../pointers.json", root);  // Loads the json file in this ptree
+    pt::read_json("pointers.json", root);  // Loads the json file in this ptree
 
 
     //fov 
