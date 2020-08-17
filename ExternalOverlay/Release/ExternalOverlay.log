@@ -1,8 +1,63 @@
 ﻿  Using triplet "x86-windows" from "C:\Users\Bailey\vcpkg\installed\x86-windows\"
   configParserOverlay.cpp
+  cps.cpp
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\cps.cpp(28,35): warning C4244: 'argument': conversion from '_Rep' to '_Ty', possible loss of data
+          with
+          [
+              _Rep=double
+          ]
+          and
+          [
+              _Ty=int
+          ]
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\cps.cpp(39,35): warning C4244: 'argument': conversion from '_Rep' to '_Ty', possible loss of data
+          with
+          [
+              _Rep=double
+          ]
+          and
+          [
+              _Ty=int
+          ]
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\cps.cpp(48,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\cps.cpp(79,36): warning C4244: 'argument': conversion from '_Rep' to '_Ty', possible loss of data
+          with
+          [
+              _Rep=double
+          ]
+          and
+          [
+              _Ty=int
+          ]
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\cps.cpp(90,36): warning C4244: 'argument': conversion from '_Rep' to '_Ty', possible loss of data
+          with
+          [
+              _Rep=double
+          ]
+          and
+          [
+              _Ty=int
+          ]
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\cps.cpp(99,20): warning C4018: '<': signed/unsigned mismatch
+  ExternalOverlay.cpp
+  keystrokes.cpp
+C:\Users\Bailey\vcpkg\installed\x86-windows\include\boost\bind.hpp(41): message : The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\keystrokes.cpp(70,19): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\keystrokes.cpp(71,22): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\keystrokes.cpp(167,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\keystrokes.cpp(171,69): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\keystrokes.cpp(175,69): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\keystrokes.cpp(188,75): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\keystrokes.cpp(188,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\keystrokes.cpp(189,77): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\keystrokes.cpp(189,56): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Paint.cpp
+C:\Users\Bailey\vcpkg\installed\x86-windows\include\boost\bind.hpp(41): message : The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\Paint.cpp(113,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  subCount.cpp
+C:\Users\Bailey\vcpkg\installed\x86-windows\include\boost\bind.hpp(41): message : The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
   Generating code
-  3 of 1183 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+  Previous IPDB not found, fall back to full compilation.
+  All 1175 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   ExternalOverlay.vcxproj -> C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\Release\ExternalOverlay.exe

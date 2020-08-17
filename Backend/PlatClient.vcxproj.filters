@@ -5,9 +5,6 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Source Files\rpcClient">
-      <UniqueIdentifier>{32ef6cef-5259-4516-b7a2-96d5189c6577}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\features">
       <UniqueIdentifier>{87af82c6-5fd1-4b4e-bcb1-ecdcb4db6710}</UniqueIdentifier>
     </Filter>
@@ -55,12 +52,6 @@
     <ClCompile Include="Discord.cpp">
       <Filter>Source Files\features\Discord\Class</Filter>
     </ClCompile>
-    <ClCompile Include="rpcClient_c.cpp">
-      <Filter>Source Files\rpcClient</Filter>
-    </ClCompile>
-    <ClCompile Include="client.cpp">
-      <Filter>Source Files\rpcClient</Filter>
-    </ClCompile>
     <ClCompile Include="configParserBackend.cpp">
       <Filter>Source Files\config</Filter>
     </ClCompile>
@@ -90,22 +81,11 @@
     <ClInclude Include="main.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="rpcClient_h.h">
-      <Filter>Source Files\rpcClient</Filter>
-    </ClInclude>
-    <ClInclude Include="client.h">
-      <Filter>Source Files\rpcClient</Filter>
-    </ClInclude>
     <ClInclude Include="configParserBackend.h">
       <Filter>Source Files\config</Filter>
     </ClInclude>
     <ClInclude Include="pointerParser.h">
       <Filter>Source Files\pointers</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Midl Include="rpcClient.idl">
-      <Filter>Source Files\rpcClient</Filter>
-    </Midl>
   </ItemGroup>
 </Project>

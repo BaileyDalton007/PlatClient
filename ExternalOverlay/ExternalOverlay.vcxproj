@@ -161,8 +161,6 @@
     <ClInclude Include="keystrokes.h" />
     <ClInclude Include="Paint.h" />
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="rpc_h.h" />
-    <ClInclude Include="server.h" />
     <ClInclude Include="subCount.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -172,8 +170,6 @@
     <ClCompile Include="ExternalOverlay.cpp" />
     <ClCompile Include="keystrokes.cpp" />
     <ClCompile Include="Paint.cpp" />
-    <ClCompile Include="rpc_s.cpp" />
-    <ClCompile Include="server.cpp" />
     <ClCompile Include="subCount.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -182,12 +178,6 @@
   <ItemGroup>
     <Image Include="ExternalOverlay.ico" />
     <Image Include="small.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Midl Include="rpc.idl">
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">/app_config %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">/app_config %(AdditionalOptions)</AdditionalOptions>
-    </Midl>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

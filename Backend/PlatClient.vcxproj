@@ -144,7 +144,7 @@
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -154,7 +154,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="client.cpp" />
     <ClCompile Include="configParserBackend.cpp" />
     <ClCompile Include="discord-rpc\src\connection_win.cpp" />
     <ClCompile Include="discord-rpc\src\discord_register_win.cpp" />
@@ -165,11 +164,9 @@
     <ClCompile Include="Discord.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mem.cpp" />
-    <ClCompile Include="rpcClient_c.cpp" />
     <ClCompile Include="pointerParser.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="client.h" />
     <ClInclude Include="configParserBackend.h" />
     <ClInclude Include="discord-rpc\src\backoff.h" />
     <ClInclude Include="discord-rpc\src\msg_queue.h" />
@@ -179,13 +176,6 @@
     <ClInclude Include="pointerParser.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="mem.h" />
-    <ClInclude Include="rpcClient_h.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Midl Include="rpcClient.idl">
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/app_config %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">/app_config %(AdditionalOptions)</AdditionalOptions>
-    </Midl>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

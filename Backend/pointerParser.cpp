@@ -64,27 +64,6 @@ void readJson(Pointer& pointer) {
     std::reverse(handOffsets.begin(), handOffsets.end());
     pointer.handOffsets = handOffsets;
 
-    //menu
-    std::string menuA = root.get<std::string>("menu.base");
-    int p = std::stoi(menuA, 0, 16);
-    pointer.menuBase = p;
-
-    std::string menuoff[7];
-    int d = 0;
-    for (pt::ptree::value_type& cell : root.get_child("menu.offsets"))
-    {
-        menuoff[d] = cell.second.get_value<std::string>();
-        d++;
-    }
-
-    std::vector<unsigned int> menuOffsets{};
-    for (int i = 0; i < 7; i++)
-    {
-        int c = std::stoi(menuoff[i], 0, 16);
-        menuOffsets.push_back(c);
-    }
-    std::reverse(menuOffsets.begin(), menuOffsets.end());
-    pointer.menuOffsets = menuOffsets;
 }
 
 Pointer getPointers(Pointer ptrobj) {

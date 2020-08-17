@@ -1,7 +1,6 @@
 #include "Paint.h"
 #include <math.h>
 #include <vector>
-#include "server.h"
 #include <winuser.h>
 #pragma comment (lib, "User32.lib")
 #include "subCount.h"

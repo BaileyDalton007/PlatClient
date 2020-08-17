@@ -2,7 +2,6 @@
 #include "Paint.h"
 #include <math.h>
 #include <vector>
-#include "server.h"
 #include <winuser.h>
 #pragma comment (lib, "User32.lib")
 #include "subCount.h"
@@ -99,10 +98,8 @@ int Paint::render()
         updateRCPS();
     }
 
-    if (strcmp(getmenustate(), zero) == 0)
+    if (targetWnd == GetForegroundWindow())
     {
-        if (targetWnd == GetForegroundWindow())
-        {
             // Youtube
             const char* ytdata = getYoutubeData();
             if (*ytdata != '\0')
@@ -119,7 +116,6 @@ int Paint::render()
             //Keystrokes
             drawKeystrokes(d3dDevice, width, height, mainFont);
 
-        }
     }
 
     d3dDevice->EndScene();

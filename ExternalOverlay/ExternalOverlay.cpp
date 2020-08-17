@@ -6,8 +6,6 @@
 #include "framework.h"
 #include "ExternalOverlay.h"
 #include "Paint.h"
-#include "rpc_h.h"
-#include "server.h"
 #include <windows.h>
 #include <WinUser.h>
 #include <wingdi.h>
@@ -53,8 +51,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
         return FALSE;
 
 
-    startRPCThread();
- 
     // Perform application initialization:
     
     if (!InitInstance(hInstance, SW_SHOW)) {

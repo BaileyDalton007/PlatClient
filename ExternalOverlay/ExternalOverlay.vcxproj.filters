@@ -19,9 +19,6 @@
     <Filter Include="Header Files\overlay headers">
       <UniqueIdentifier>{518f6590-c87b-4cb5-8d0f-14ec78e94f6b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\rpc-server">
-      <UniqueIdentifier>{eebd0c65-ee33-4e2b-b8a8-1b07ff02e44a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\features">
       <UniqueIdentifier>{3d006fc9-ab73-4d5b-81e2-9b506257d38f}</UniqueIdentifier>
     </Filter>
@@ -54,12 +51,6 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files\overlay headers</Filter>
     </ClInclude>
-    <ClInclude Include="rpc_h.h">
-      <Filter>Source Files\rpc-server</Filter>
-    </ClInclude>
-    <ClInclude Include="server.h">
-      <Filter>Source Files\rpc-server</Filter>
-    </ClInclude>
     <ClInclude Include="subCount.h">
       <Filter>Source Files\features\youtube</Filter>
     </ClInclude>
@@ -79,12 +70,6 @@
     </ClCompile>
     <ClCompile Include="Paint.cpp">
       <Filter>Source Files\overlay</Filter>
-    </ClCompile>
-    <ClCompile Include="rpc_s.cpp">
-      <Filter>Source Files\rpc-server</Filter>
-    </ClCompile>
-    <ClCompile Include="server.cpp">
-      <Filter>Source Files\rpc-server</Filter>
     </ClCompile>
     <ClCompile Include="subCount.cpp">
       <Filter>Source Files\features\youtube</Filter>
@@ -111,10 +96,5 @@
     <Image Include="ExternalOverlay.ico">
       <Filter>Resource Files</Filter>
     </Image>
-  </ItemGroup>
-  <ItemGroup>
-    <Midl Include="rpc.idl">
-      <Filter>Source Files\rpc-server</Filter>
-    </Midl>
   </ItemGroup>
 </Project>
