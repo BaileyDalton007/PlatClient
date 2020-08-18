@@ -20,7 +20,7 @@
 
 // Global Variables:
 HINSTANCE hInst;                                // current instance
-WCHAR overlayWindowName[100] = L"Overlay";  // main window class name & The title bar text
+WCHAR overlayWindowName[100] = L"PlatClient";  // main window class name & The title bar text
 LPCSTR targetWindowName = "Minecraft";  // main window class name & The title bar text
 HWND targetHWND, overlayHWND;
 int width, height;

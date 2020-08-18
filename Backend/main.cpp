@@ -18,8 +18,9 @@ uintptr_t handAddr;
 
 int currMenu;
 
-int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
+int main()
 {
+	HideConsole();
 	Config config{};
 	config = getConfig(config);
 
@@ -35,6 +36,8 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 
 	//Get ProcID of the target Process
 	static DWORD procId = mem::GetProcId(L"Minecraft.Windows.exe");
+	static DWORD overlayPID = mem::GetProcId(L"ExternalOverlay.exe");
+
 
 	//GetModuleBaseAddress
 	static uintptr_t moduleBase = mem::GetModuleBaseAddress(procId, L"Minecraft.Windows.exe");
@@ -58,7 +61,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 	}
 
 
-	float currFov = 10;
+	float currFov;
 	DWORD hideHand = 1;
 	DWORD showHand = 0;
 	bool zoomed = false;
@@ -96,9 +99,21 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 			}
 		}
 		Sleep(1);
+		if (!mem::IsProcessRunning(overlayPID))
+		{
+			break;
+		}
 	}
 
 	return 0;
 }
 
+void HideConsole()
+{
+	::ShowWindow(::GetConsoleWindow(), SW_HIDE);
+}
 
+void ShowConsole()
+{
+	::ShowWindow(::GetConsoleWindow(), SW_SHOW);
+}
