@@ -37,8 +37,8 @@ OVERLAY
 
 Youtube
 
-youtubeAPIkey = 
-youtubeChannelID = 
+youtubeAPIkey = AIzaSyDi-SgRGq2RhRhfqq5xRKgVNeIF4cLuHLQ
+youtubeChannelID = UCflrnDJan_mXmRiAkihzThQ
 [see discord or video on how to set up youtube stats]
 API key and channel id used to query the youtube api for a channel name and subcount
 to display on the overlay

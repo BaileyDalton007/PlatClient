@@ -33,6 +33,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_123E89340CC9493A9FCFDACB354485CD"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2E66DBAA87224115ADFE3A3FF3D81B6B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_3D0BD32CBAB84E4CA389B76890001F72"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -69,6 +81,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_819DF225F11248E7970844CDA6E5B171"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_9DD2D83F4A5741BA8B141F47E8FDA646"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -94,6 +112,12 @@
         "Entry"
         {
         "MsmKey" = "8:_C891E8B64BAF42D28379E24334ACE45C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CF2E4C79F33646A2978BA66543857184"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -242,6 +266,46 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_123E89340CC9493A9FCFDACB354485CD"
+            {
+            "SourcePath" = "8:..\\D3DX9_43.dll"
+            "TargetName" = "8:D3DX9_43.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_12165F897173413095475341CBA712B3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2E66DBAA87224115ADFE3A3FF3D81B6B"
+            {
+            "SourcePath" = "8:..\\libeay32.dll"
+            "TargetName" = "8:libeay32.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_12165F897173413095475341CBA712B3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4CE539DD1E15436BAC09D0B506295504"
             {
             "SourcePath" = "8:libcurl.dll"
@@ -342,6 +406,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_819DF225F11248E7970844CDA6E5B171"
+            {
+            "SourcePath" = "8:..\\ExternalOverlay\\msvcr120.dll"
+            "TargetName" = "8:msvcr120.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_12165F897173413095475341CBA712B3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9DD2D83F4A5741BA8B141F47E8FDA646"
             {
             "SourcePath" = "8:..\\start.bat"
@@ -426,6 +510,26 @@
             {
             "SourcePath" = "8:..\\pointers.json"
             "TargetName" = "8:pointers.json"
+            "Tag" = "8:"
+            "Folder" = "8:_12165F897173413095475341CBA712B3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CF2E4C79F33646A2978BA66543857184"
+            {
+            "SourcePath" = "8:..\\ssleay32.dll"
+            "TargetName" = "8:ssleay32.dll"
             "Tag" = "8:"
             "Folder" = "8:_12165F897173413095475341CBA712B3"
             "Condition" = "8:"
@@ -570,7 +674,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:PlatClient"
         "ProductCode" = "8:{68081FEC-A61C-406C-8BBE-48BD5B7D000E}"
-        "PackageCode" = "8:{96F1CB3C-1D26-43AA-B66D-D8A0E1CD4C94}"
+        "PackageCode" = "8:{A14ED671-4F5B-4C17-B47A-73F890A10B6F}"
         "UpgradeCode" = "8:{143B53F3-855B-462A-BD2C-19D3A474E8A5}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"

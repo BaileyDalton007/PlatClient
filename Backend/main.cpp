@@ -101,7 +101,7 @@ int main()
 		Sleep(1);
 		if (!mem::IsProcessRunning(overlayPID))
 		{
-			break;
+			//break;
 		}
 	}
 
