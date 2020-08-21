@@ -1,0 +1,49 @@
+﻿  ExternalOverlay.cpp
+  Paint.cpp
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\Paint.cpp(74,94): warning C4267: 'argument': conversion from 'size_t' to 'INT', possible loss of data
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xstring(2395,23): warning C4244: 'argument': conversion from 'wchar_t' to 'const _Elem', possible loss of data
+          with
+          [
+              _Elem=char
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xstring(2406): message : see reference to function template instantiation 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct<wchar_t*>(_Iter,const _Iter,std::input_iterator_tag)' being compiled
+          with
+          [
+              _Iter=wchar_t *
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xstring(2406): message : see reference to function template instantiation 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct<wchar_t*>(_Iter,const _Iter,std::input_iterator_tag)' being compiled
+          with
+          [
+              _Iter=wchar_t *
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xstring(2386): message : see reference to function template instantiation 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct<wchar_t*>(const _Iter,const _Iter,std::forward_iterator_tag)' being compiled
+          with
+          [
+              _Iter=wchar_t *
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\xstring(2386): message : see reference to function template instantiation 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct<wchar_t*>(const _Iter,const _Iter,std::forward_iterator_tag)' being compiled
+          with
+          [
+              _Iter=wchar_t *
+          ]
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\Paint.cpp(27): message : see reference to function template instantiation 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(_Iter,_Iter,const _Alloc &)' being compiled
+          with
+          [
+              _Elem=wchar_t,
+              _Iter=std::_String_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
+              _Alloc=std::allocator<char>
+          ]
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\ExternalOverlay\Paint.cpp(27): message : see reference to function template instantiation 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(_Iter,_Iter,const _Alloc &)' being compiled
+          with
+          [
+              _Elem=wchar_t,
+              _Iter=std::_String_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
+              _Alloc=std::allocator<char>
+          ]
+  Generating Code...
+Paint.obj : error LNK2019: unresolved external symbol D3DXCreateFontW referenced in function "private: int __cdecl Paint::d3D9Init(struct HWND__ *)" (?d3D9Init@Paint@@AEAAHPEAUHWND__@@@Z)
+Paint.obj : error LNK2019: unresolved external symbol DXGetErrorStringW referenced in function "private: int __cdecl Paint::d3D9Init(struct HWND__ *)" (?d3D9Init@Paint@@AEAAHPEAUHWND__@@@Z)
+Paint.obj : error LNK2019: unresolved external symbol DXGetErrorDescriptionW referenced in function "private: int __cdecl Paint::d3D9Init(struct HWND__ *)" (?d3D9Init@Paint@@AEAAHPEAUHWND__@@@Z)
+..\ExternalOverlay\DirectX\d3dx9.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+..\ExternalOverlay\DirectX\dxerr.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\x64\Debug\ExternalOverlay.exe : fatal error LNK1120: 3 unresolved externals

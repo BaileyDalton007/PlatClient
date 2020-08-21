@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Features">
+      <UniqueIdentifier>{48ce2c15-b44d-4f89-b36d-7a6357b11ebf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Features\cps">
+      <UniqueIdentifier>{22684235-4501-4bd7-b07f-29767b901263}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Features\keystrokes">
+      <UniqueIdentifier>{d992b20d-310f-47da-9669-30fcbf1307ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Features\subcount">
+      <UniqueIdentifier>{edb24354-737d-4ee1-bea6-ce1d14e0c5b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Overlay">
+      <UniqueIdentifier>{e7c7abb5-be6a-4b56-bd1d-f78cdb8d084c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Main">
+      <UniqueIdentifier>{16435658-30f1-4c0b-a315-05ff6323145f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Main\memory">
+      <UniqueIdentifier>{cc546373-f7d0-4202-9718-b8a0fae91d72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Features\discord">
+      <UniqueIdentifier>{ad82e066-130a-4fa0-ab5f-49c1fa2f91f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Config">
+      <UniqueIdentifier>{77cb438d-75fa-4fc4-9b80-f2b9b2e6eded}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Main\memory\pointers">
+      <UniqueIdentifier>{73664553-7a9d-4361-b31d-5fa13175bd56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Features\discord\SDK">
+      <UniqueIdentifier>{7fd0010c-f06b-4f02-8e05-ab6f6bebce86}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cps.h">
+      <Filter>Source Files\Features\cps</Filter>
+    </ClInclude>
+    <ClInclude Include="keystrokes.h">
+      <Filter>Source Files\Features\keystrokes</Filter>
+    </ClInclude>
+    <ClInclude Include="subCount.h">
+      <Filter>Source Files\Features\subcount</Filter>
+    </ClInclude>
+    <ClInclude Include="Paint.h">
+      <Filter>Source Files\Overlay</Filter>
+    </ClInclude>
+    <ClInclude Include="PClient.h">
+      <Filter>Source Files\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="mem.h">
+      <Filter>Source Files\Main\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Discord.h">
+      <Filter>Source Files\Features\discord</Filter>
+    </ClInclude>
+    <ClInclude Include="pointerParser.h">
+      <Filter>Source Files\Main\memory\pointers</Filter>
+    </ClInclude>
+    <ClInclude Include="configParser.h">
+      <Filter>Source Files\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="discord-rpc\src\backoff.h">
+      <Filter>Source Files\Features\discord\SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="discord-rpc\src\connection.h">
+      <Filter>Source Files\Features\discord\SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="discord-rpc\src\msg_queue.h">
+      <Filter>Source Files\Features\discord\SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="discord-rpc\src\rpc_connection.h">
+      <Filter>Source Files\Features\discord\SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="discord-rpc\src\serialization.h">
+      <Filter>Source Files\Features\discord\SDK</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cps.cpp">
+      <Filter>Source Files\Features\cps</Filter>
+    </ClCompile>
+    <ClCompile Include="keystrokes.cpp">
+      <Filter>Source Files\Features\keystrokes</Filter>
+    </ClCompile>
+    <ClCompile Include="subCount.cpp">
+      <Filter>Source Files\Features\subcount</Filter>
+    </ClCompile>
+    <ClCompile Include="Paint.cpp">
+      <Filter>Source Files\Overlay</Filter>
+    </ClCompile>
+    <ClCompile Include="PClient.cpp">
+      <Filter>Source Files\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="mem.cpp">
+      <Filter>Source Files\Main\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Discord.cpp">
+      <Filter>Source Files\Features\discord</Filter>
+    </ClCompile>
+    <ClCompile Include="pointerParser.cpp">
+      <Filter>Source Files\Main\memory\pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="configParser.cpp">
+      <Filter>Source Files\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="discord-rpc\src\connection_win.cpp">
+      <Filter>Source Files\Features\discord\SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="discord-rpc\src\discord_register_win.cpp">
+      <Filter>Source Files\Features\discord\SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="discord-rpc\src\discord_rpc.cpp">
+      <Filter>Source Files\Features\discord\SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="discord-rpc\src\dllmain.cpp">
+      <Filter>Source Files\Features\discord\SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="discord-rpc\src\rpc_connection.cpp">
+      <Filter>Source Files\Features\discord\SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="discord-rpc\src\serialization.cpp">
+      <Filter>Source Files\Features\discord\SDK</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="PClient.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="PClient.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

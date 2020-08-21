@@ -1,0 +1,75 @@
+This is the config file for Plat Client, changing things in here may cause errors in
+your program's runtime. Feel free to see discord to ask questions or read up on
+the full explaination of all of these settings.
+
+CONFIG FILE IS ONLY UPDATED ON PROGRAM REBOOT. Be sure to close and reopen the client
+for changes to occur
+
+Under each option in brackets [], there are the option values that a setting can have
+
+
+
+
+INGAME
+
+zoomEnabled = 1
+[0, 1]
+toggles if the zoom function is active or not
+
+zoomKey = 0x11
+[see MSDN page below for hex codes (will start with "0x")]
+sets the key to hold down for zoom function the default is the ctrl key (0x11), see 
+https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes for other keycodes
+
+
+
+
+DISCORD
+
+discordPresence = 1
+[0, 1]
+toggles if the Clients Discord Rich Presence is displayed (the fancy status thing)
+
+
+
+
+OVERLAY
+
+Youtube
+
+youtubeAPIkey = AIzaSyDi-SgRGq2RhRhfqq5xRKgVNeIF4cLuHLQ
+youtubeChannelID = UCflrnDJan_mXmRiAkihzThQ
+[see discord or video on how to set up youtube stats]
+API key and channel id used to query the youtube api for a channel name and subcount
+to display on the overlay
+
+displayScale = 4
+[any integer above 0]
+If your channel name is long and goes out of the box, slowy bump this up, as it stretches
+the box in the x direction. I suggest keeping this below 7, but test and see what works
+for you.
+
+
+Keystrokes and CPS
+
+showKeyStrokes = 1
+[0, 1]
+toggles the rendering of keystrokes (WASD) on the overlay
+
+showCPS = 1
+[0, 1]
+toggles if CPS (clicks per second) are displayed on the overlay
+
+keyStrokeX = 200
+[number above 0]
+the distance from the keystrokes to the right side of the minecraft window
+play around with this value, as it will be different on every res monitor.
+If left blank the default is 200.
+
+keyStrokeY = 200
+[number above 0]
+the distance from the keystrokes to the top of the minecraft window
+play around with this value, as it will be different on every res monitor.
+If left blank the default is 200.
+
+
