@@ -6,3 +6,5 @@
 
 
 Config returnConfig();
+const char * getIgn();
+std::wstring readpChar(uintptr_t address);

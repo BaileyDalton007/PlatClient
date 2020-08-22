@@ -18,9 +18,11 @@
 #include <sstream>
 #include <time.h>
 #include <chrono>
+#include <cstdlib>
 #include <Windows.h>
 #include "configParser.h"
 #include "pointerParser.h"
+#include "zoom.h"
 
 
 #pragma comment (lib, "User32.lib")
@@ -34,6 +36,7 @@ LPCSTR targetWindowName = "Minecraft";  // main window class name & The title ba
 HWND targetHWND, overlayHWND;
 int width, height;
 Paint paint;
+static HANDLE hProcess;
 
 // Forward declarations of functions included in this code module:
 ATOM                registerClass(HINSTANCE hInstance);
@@ -44,6 +47,8 @@ LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
 Discord* g_Discord;
 uintptr_t fovAddr;
 uintptr_t handAddr;
+uintptr_t ignAddr;
+bool discBool;
 
 int currMenu;
 
@@ -57,15 +62,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
     Config config{};
     config = getConfig(config);
 
+    discBool = config.showIGN;
     Pointer pointerJson{};
     pointerJson = getPointers(pointerJson);
-
-    if (config.discordRPCBool == true)
-    {
-        //Discord Rich Presence
-        g_Discord->Initialize();
-        g_Discord->Update();
-    }
 
     //Get ProcID of the target Process
     static DWORD procId = mem::GetProcId(L"Minecraft.Windows.exe");
@@ -75,21 +74,35 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
     static uintptr_t moduleBase = mem::GetModuleBaseAddress(procId, L"Minecraft.Windows.exe");
 
     //Get Handle to Process
-    static HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, NULL, procId);
+    hProcess = OpenProcess(PROCESS_ALL_ACCESS, NULL, procId);
 
     if (config.zoomBool == true)
     {
         //Resolve base address of pointer chain
         uintptr_t fovDynamicPtrBaseAddr = moduleBase + pointerJson.fovBase;
         uintptr_t handDynamicPtrBaseAddr = moduleBase + pointerJson.handBase;
+        uintptr_t ignDynamicPtrBaseAddr = moduleBase + pointerJson.ignBase;
+
 
         //Resolve zoom pointer chain
         std::vector<unsigned int> fovOffsets = pointerJson.fovOffsets;
         std::vector<unsigned int> handOffsets = pointerJson.handOffsets;
+        std::vector<unsigned int> ignOffsets = pointerJson.ignOffsets;
+
 
 
         fovAddr = mem::FindDMAAddy(hProcess, fovDynamicPtrBaseAddr, fovOffsets);
         handAddr = mem::FindDMAAddy(hProcess, handDynamicPtrBaseAddr, handOffsets);
+        ignAddr = mem::FindDMAAddy(hProcess, ignDynamicPtrBaseAddr, ignOffsets);
+
+
+        if (config.discordRPCBool == true)
+        {
+            //Discord Rich Presence
+            g_Discord->Initialize();
+            g_Discord->Update();
+        }
+
     }
 
     targetHWND = FindWindowA(0, targetWindowName);
@@ -111,11 +124,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
     paint = Paint(overlayHWND, targetHWND, width, height);
     MSG msg;
 
-    float currFov;
-    DWORD hideHand = 1;
-    DWORD showHand = 0;
-    bool zoomed = false;
-
     // Main message loop:
     while (GetMessage(&msg, nullptr, 0, 0)) {
         TranslateMessage(&msg);
@@ -130,33 +138,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
 
         if (config.zoomBool == true)
         {
-            ReadProcessMemory(hProcess, (BYTE*)fovAddr, &currFov, sizeof(currFov), nullptr);
-            float oldFov;
-            if (GetKeyState(config.zoomKey) & 0x8000)
-            {
-
-                if (currFov != 30)
-                {
-                    if (!zoomed)
-                    {
-                        oldFov = currFov;
-                        float newFov = 30;
-                        WriteProcessMemory(hProcess, (BYTE*)fovAddr, &newFov, sizeof(newFov), nullptr);
-                        WriteProcessMemory(hProcess, (BYTE*)handAddr, &hideHand, sizeof(hideHand), nullptr);
-                        zoomed = true;
-                    }
-
-                }
-
-            }
-            else {
-                if (currFov == 30) {
-                    WriteProcessMemory(hProcess, (BYTE*)fovAddr, &oldFov, sizeof(oldFov), nullptr);
-                    WriteProcessMemory(hProcess, (BYTE*)handAddr, &showHand, sizeof(showHand), nullptr);
-                    if (zoomed) { zoomed = false; }
-
-                }
-            }
+            zoomLoop(config.zoomKey, hProcess, fovAddr, handAddr);
         }
     }
     return (int)msg.wParam;
@@ -216,7 +198,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 }
 
 //
-//  FUNCTION: WndProc(HWND, UINT, WPARAM, LPARAM)
+//  FUNCTION: WndProc(HWND, UINT, WPARAM, LPARAM)    jjjhhhu
 //
 //  PURPOSE: Processes messages for the main window.
 //
@@ -257,4 +239,37 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) 
         return DefWindowProc(hWnd, message, wParam, lParam);
     }
     return 0;
+}
+
+const char* getIgn()
+{
+    if (discBool == true)
+    {
+        std::wstring ign = readpChar(ignAddr);
+        const wchar_t* str = ign.c_str();
+        size_t size = wcslen(str) * 2 + 2;
+        char* StartPoint = new char[size];
+        size_t c_size;
+        wcstombs_s(&c_size, StartPoint, size, str, size);
+
+        return StartPoint;
+    }
+    else {
+        return "";
+    }
+}
+
+std::wstring readpChar(uintptr_t address) {
+    try {
+        if (address != 0) {
+            const size_t namesize = 200;
+            char x[namesize];
+            ReadProcessMemory(hProcess, (LPCVOID)address, &x, namesize, NULL);
+            std::wstring tmpname = std::wstring(&x[0], &x[namesize]);
+            wchar_t* czech = wcstok(&tmpname[0], L"\0");
+            if (czech != nullptr) return czech;
+        }
+    }
+    catch (const std::exception& exc) {}
+    return std::wstring(L"\0");
 }

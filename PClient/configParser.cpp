@@ -22,6 +22,10 @@ void loadConfig(Config& config) {
         {
             sin >> config.discordRPCBool;
         }
+        else if (line.find("showIgn") != -1)
+        {
+            sin >> config.showIGN;
+        }
         else if (line.find("zoomKey") != -1)
         {
             sin >> d;

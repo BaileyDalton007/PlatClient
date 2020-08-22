@@ -12,13 +12,13 @@ Under each option in brackets [], there are the option values that a setting can
 
 INGAME
 
-zoomEnabled = 1
+zoomEnabled = 0
 [0, 1]
 toggles if the zoom function is active or not
 
-zoomKey = 0x11
+zoomKey = 0x5A
 [see MSDN page below for hex codes (will start with "0x")]
-sets the key to hold down for zoom function the default is the ctrl key (0x11), see 
+sets the key to hold down for zoom function the default is the Z key (0x5A), see 
 https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes for other keycodes
 
 
@@ -30,6 +30,10 @@ discordPresence = 1
 [0, 1]
 toggles if the Clients Discord Rich Presence is displayed (the fancy status thing)
 
+showIgn = 1
+[0, 1]
+toggles if the Clients Discord Rich Presence displays ign of account currently being played on
+(hover over purple circle)
 
 
 
@@ -37,8 +41,8 @@ OVERLAY
 
 Youtube
 
-youtubeAPIkey = AIzaSyDi-SgRGq2RhRhfqq5xRKgVNeIF4cLuHLQ
-youtubeChannelID = UCflrnDJan_mXmRiAkihzThQ
+youtubeAPIkey = 
+youtubeChannelID = 
 [see discord or video on how to set up youtube stats]
 API key and channel id used to query the youtube api for a channel name and subcount
 to display on the overlay

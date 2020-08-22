@@ -9,6 +9,7 @@
 struct Config {
     bool zoomBool;
     bool discordRPCBool;
+    bool showIGN;
     int zoomKey;
     std::string ytAPIkey;
     std::string ytChannelId;

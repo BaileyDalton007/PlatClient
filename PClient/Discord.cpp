@@ -1,4 +1,5 @@
 #include "Discord.h"
+#include "PClient.h"
 #include <iostream>
 #include <ctime>
 #include <string>
@@ -25,6 +26,6 @@ void Discord::Update()
     discordPresence.largeImageKey = "pfp";
     discordPresence.largeImageText = "PlatClient";
     discordPresence.smallImageKey = "bedrock";
-    discordPresence.smallImageText = "ign";
+    discordPresence.smallImageText = getIgn();
     Discord_UpdatePresence(&discordPresence);
 }

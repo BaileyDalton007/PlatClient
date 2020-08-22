@@ -20,23 +20,23 @@ void readJson(Pointer& pointer) {
 
     //fov 
     std::string fovA = root.get<std::string>("fov.base");
-    int b = std::stoi(fovA, 0, 16);
-    pointer.fovBase = b;
+    int fovB = std::stoi(fovA, 0, 16);
+    pointer.fovBase = fovB;
 
 
 
-    std::string offsets[7];
-    int y = 0;
+    std::string fovPoffsets[7];
+    int fovY = 0;
     for (pt::ptree::value_type& cell : root.get_child("fov.offsets"))
     {
-        offsets[y] = cell.second.get_value<std::string>();
-        y++;
+        fovPoffsets[fovY] = cell.second.get_value<std::string>();
+        fovY++;
     }
 
     std::vector<unsigned int> fovOffsets{};
     for (int i = 0; i < 7; i++)
     {
-        int c = std::stoi(offsets[i], 0, 16);
+        int c = std::stoi(fovPoffsets[i], 0, 16);
         fovOffsets.push_back(c);
     }
     std::reverse(fovOffsets.begin(), fovOffsets.end());
@@ -44,15 +44,15 @@ void readJson(Pointer& pointer) {
 
     //hand
     std::string handA = root.get<std::string>("hand.base");
-    int g = std::stoi(handA, 0, 16);
-    pointer.handBase = g;
+    int handB = std::stoi(handA, 0, 16);
+    pointer.handBase = handB;
 
     std::string handoff[7];
-    int u = 0;
+    int handY = 0;
     for (pt::ptree::value_type& cell : root.get_child("hand.offsets"))
     {
-        handoff[u] = cell.second.get_value<std::string>();
-        u++;
+        handoff[handY] = cell.second.get_value<std::string>();
+        handY++;
     }
 
     std::vector<unsigned int> handOffsets{};
@@ -63,6 +63,30 @@ void readJson(Pointer& pointer) {
     }
     std::reverse(handOffsets.begin(), handOffsets.end());
     pointer.handOffsets = handOffsets;
+
+    //ign
+    std::string ignA = root.get<std::string>("ign.base");
+    int ignB = std::stoi(ignA, 0, 16);
+    pointer.ignBase = ignB;
+
+
+
+    std::string ignoffsets[7];
+    int ignY = 0;
+    for (pt::ptree::value_type& cell : root.get_child("ign.offsets"))
+    {
+        ignoffsets[ignY] = cell.second.get_value<std::string>();
+        ignY++;
+    }
+
+    std::vector<unsigned int> ignOffsets{};
+    for (int i = 0; i < 7; i++)
+    {
+        int c = std::stoi(ignoffsets[i], 0, 16);
+        ignOffsets.push_back(c);
+    }
+    std::reverse(ignOffsets.begin(), ignOffsets.end());
+    pointer.ignOffsets = ignOffsets;
 
 }
 

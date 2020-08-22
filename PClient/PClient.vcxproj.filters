@@ -46,6 +46,9 @@
     <Filter Include="Source Files\Features\discord\SDK">
       <UniqueIdentifier>{7fd0010c-f06b-4f02-8e05-ab6f6bebce86}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Features\zoom">
+      <UniqueIdentifier>{1463e0bf-6ec6-4d56-b358-3187ae18a3a4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -99,6 +102,9 @@
     <ClInclude Include="discord-rpc\src\serialization.h">
       <Filter>Source Files\Features\discord\SDK</Filter>
     </ClInclude>
+    <ClInclude Include="zoom.h">
+      <Filter>Source Files\Features\zoom</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cps.cpp">
@@ -146,6 +152,9 @@
     <ClCompile Include="discord-rpc\src\serialization.cpp">
       <Filter>Source Files\Features\discord\SDK</Filter>
     </ClCompile>
+    <ClCompile Include="zoom.cpp">
+      <Filter>Source Files\Features\zoom</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="PClient.rc">
@@ -159,5 +168,8 @@
     <Image Include="PClient.ico">
       <Filter>Resource Files</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pointers.json" />
   </ItemGroup>
 </Project>
