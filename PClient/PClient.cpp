@@ -48,9 +48,11 @@ Discord* g_Discord;
 uintptr_t fovAddr;
 uintptr_t handAddr;
 uintptr_t ignAddr;
-bool discBool;
+uintptr_t menuAddr;
 
-int currMenu;
+bool discBool;
+int menuStatus;
+
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR    lpCmdLine, _In_ int       nCmdShow)
 {
@@ -76,34 +78,40 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
     //Get Handle to Process
     hProcess = OpenProcess(PROCESS_ALL_ACCESS, NULL, procId);
 
+    uintptr_t ignDynamicPtrBaseAddr = moduleBase + pointerJson.ignBase;
+    std::vector<unsigned int> ignOffsets = pointerJson.ignOffsets;
+    ignAddr = mem::FindDMAAddy(hProcess, ignDynamicPtrBaseAddr, ignOffsets);
+
+
+    uintptr_t menuDynamicPtrBaseAddr = moduleBase + pointerJson.menuBase;
+    std::vector<unsigned int> menuOffsets = pointerJson.menuOffsets;
+    menuAddr = mem::FindDMAAddy(hProcess, menuDynamicPtrBaseAddr, menuOffsets);
+
     if (config.zoomBool == true)
     {
         //Resolve base address of pointer chain
         uintptr_t fovDynamicPtrBaseAddr = moduleBase + pointerJson.fovBase;
         uintptr_t handDynamicPtrBaseAddr = moduleBase + pointerJson.handBase;
-        uintptr_t ignDynamicPtrBaseAddr = moduleBase + pointerJson.ignBase;
 
 
         //Resolve zoom pointer chain
         std::vector<unsigned int> fovOffsets = pointerJson.fovOffsets;
         std::vector<unsigned int> handOffsets = pointerJson.handOffsets;
-        std::vector<unsigned int> ignOffsets = pointerJson.ignOffsets;
 
 
 
         fovAddr = mem::FindDMAAddy(hProcess, fovDynamicPtrBaseAddr, fovOffsets);
         handAddr = mem::FindDMAAddy(hProcess, handDynamicPtrBaseAddr, handOffsets);
-        ignAddr = mem::FindDMAAddy(hProcess, ignDynamicPtrBaseAddr, ignOffsets);
+    }
 
-
-        if (config.discordRPCBool == true)
-        {
+    if (config.discordRPCBool == true)
+    {
             //Discord Rich Presence
             g_Discord->Initialize();
             g_Discord->Update();
-        }
-
     }
+
+    
 
     targetHWND = FindWindowA(0, targetWindowName);
     if (targetHWND) {
@@ -135,6 +143,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
         height = rect.bottom - rect.top;
 
         MoveWindow(overlayHWND, rect.left, rect.top, width, height, true);
+
+        ReadProcessMemory(hProcess, (BYTE*)menuAddr, &menuStatus, sizeof(menuStatus), NULL);
 
         if (config.zoomBool == true)
         {
@@ -189,7 +199,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
     if (!overlayHWND) {
         return FALSE;
-    }
+    } 
     SetLayeredWindowAttributes(overlayHWND, RGB(0, 0, 0), 0, LWA_COLORKEY);
 
     ShowWindow(overlayHWND, nCmdShow);
@@ -272,4 +282,9 @@ std::wstring readpChar(uintptr_t address) {
     }
     catch (const std::exception& exc) {}
     return std::wstring(L"\0");
+}
+
+int getMenuStatus()
+{
+    return menuStatus;
 }

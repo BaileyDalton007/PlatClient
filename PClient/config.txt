@@ -12,7 +12,7 @@ Under each option in brackets [], there are the option values that a setting can
 
 INGAME
 
-zoomEnabled = 0
+zoomEnabled = 1
 [0, 1]
 toggles if the zoom function is active or not
 

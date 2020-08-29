@@ -10,6 +10,7 @@
 #include "keystrokes.h"
 #include "configParser.h"
 #include "cps.h"
+#include "DevFuncs.h"
 
 //Global Sprites
 LPD3DXSPRITE ytSprite = NULL;
@@ -97,9 +98,10 @@ int Paint::render()
         updateCPS();
         updateRCPS();
     }
-
-    if (targetWnd == GetForegroundWindow())
+    if (getMenuStatus() == 0)
     {
+        if (targetWnd == GetForegroundWindow())
+        {
             // Youtube
             const char* ytdata = getYoutubeData();
             if (*ytdata != '\0')
@@ -115,7 +117,7 @@ int Paint::render()
 
             //Keystrokes
             drawKeystrokes(d3dDevice, width, height, mainFont);
-
+        }
     }
 
     d3dDevice->EndScene();

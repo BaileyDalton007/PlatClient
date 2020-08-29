@@ -49,6 +49,9 @@
     <Filter Include="Source Files\Features\zoom">
       <UniqueIdentifier>{1463e0bf-6ec6-4d56-b358-3187ae18a3a4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\dev files">
+      <UniqueIdentifier>{e1d5b550-b430-4b9a-a9f7-c124c2f91dbf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -105,6 +108,9 @@
     <ClInclude Include="zoom.h">
       <Filter>Source Files\Features\zoom</Filter>
     </ClInclude>
+    <ClInclude Include="DevFuncs.h">
+      <Filter>Source Files\dev files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cps.cpp">
@@ -155,6 +161,9 @@
     <ClCompile Include="zoom.cpp">
       <Filter>Source Files\Features\zoom</Filter>
     </ClCompile>
+    <ClCompile Include="DevFuncs.cpp">
+      <Filter>Source Files\dev files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="PClient.rc">
@@ -171,5 +180,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="pointers.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="config.txt" />
   </ItemGroup>
 </Project>

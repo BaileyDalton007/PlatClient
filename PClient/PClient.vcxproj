@@ -144,6 +144,7 @@
   <ItemGroup>
     <ClInclude Include="configParser.h" />
     <ClInclude Include="cps.h" />
+    <ClInclude Include="DevFuncs.h" />
     <ClInclude Include="discord-rpc\src\backoff.h" />
     <ClInclude Include="discord-rpc\src\connection.h" />
     <ClInclude Include="discord-rpc\src\msg_queue.h" />
@@ -176,6 +177,7 @@
     <ClCompile Include="Paint.cpp" />
     <ClCompile Include="PClient.cpp" />
     <ClCompile Include="pointerParser.cpp" />
+    <ClCompile Include="DevFuncs.cpp" />
     <ClCompile Include="subCount.cpp" />
     <ClCompile Include="zoom.cpp" />
   </ItemGroup>
@@ -188,6 +190,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="pointers.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="config.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

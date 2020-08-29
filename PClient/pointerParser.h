@@ -19,6 +19,9 @@ struct Pointer {
 
 	int ignBase;
 	std::vector<unsigned int> ignOffsets;
+
+	int menuBase;
+	std::vector<unsigned int> menuOffsets;
 };
 
 Pointer getPointers(Pointer ptrobj);

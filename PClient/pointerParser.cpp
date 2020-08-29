@@ -88,6 +88,27 @@ void readJson(Pointer& pointer) {
     std::reverse(ignOffsets.begin(), ignOffsets.end());
     pointer.ignOffsets = ignOffsets;
 
+    //menu
+    std::string menuA = root.get<std::string>("menu.base");
+    int menuB = std::stoi(menuA, 0, 16);
+    pointer.menuBase = menuB;
+
+    std::string menuoff[7];
+    int menuY = 0;
+    for (pt::ptree::value_type& cell : root.get_child("menu.offsets"))
+    {
+        menuoff[menuY] = cell.second.get_value<std::string>();
+        menuY++;
+    }
+
+    std::vector<unsigned int> menuOffsets{};
+    for (int i = 0; i < 7; i++)
+    {
+        int c = std::stoi(menuoff[i], 0, 16);
+        menuOffsets.push_back(c);
+    }
+    std::reverse(menuOffsets.begin(), menuOffsets.end());
+    pointer.menuOffsets = menuOffsets;
 }
 
 Pointer getPointers(Pointer ptrobj) {

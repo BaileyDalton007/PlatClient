@@ -57,12 +57,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_5410152F31894CD2A87D319FA5034A35"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_72807D91DBEC407992D59FA0577B0E7C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -87,25 +81,25 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_9DD2D83F4A5741BA8B141F47E8FDA646"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_9FE369D85D324CBF92D56DE550C1AA97"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_C891E8B64BAF42D28379E24334ACE45C"
+        "MsmKey" = "8:_B5E5609263C24896BB3A3E49E8BF0480"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_CF2E4C79F33646A2978BA66543857184"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D2EE9AA6307546D4A70C53723CE8F571"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -328,26 +322,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5410152F31894CD2A87D319FA5034A35"
-            {
-            "SourcePath" = "8:..\\config.txt"
-            "TargetName" = "8:config.txt"
-            "Tag" = "8:"
-            "Folder" = "8:_12165F897173413095475341CBA712B3"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_72807D91DBEC407992D59FA0577B0E7C"
             {
             "SourcePath" = "8:..\\PClient\\assests\\wkey.png"
@@ -428,26 +402,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9DD2D83F4A5741BA8B141F47E8FDA646"
-            {
-            "SourcePath" = "8:..\\start.bat"
-            "TargetName" = "8:start.bat"
-            "Tag" = "8:"
-            "Folder" = "8:_12165F897173413095475341CBA712B3"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9FE369D85D324CBF92D56DE550C1AA97"
             {
             "SourcePath" = "8:..\\PClient\\assests\\youtube.png"
@@ -468,9 +422,9 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C891E8B64BAF42D28379E24334ACE45C"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B5E5609263C24896BB3A3E49E8BF0480"
             {
-            "SourcePath" = "8:..\\pointers.json"
+            "SourcePath" = "8:..\\PClient\\pointers.json"
             "TargetName" = "8:pointers.json"
             "Tag" = "8:"
             "Folder" = "8:_12165F897173413095475341CBA712B3"
@@ -492,6 +446,26 @@
             {
             "SourcePath" = "8:..\\ssleay32.dll"
             "TargetName" = "8:ssleay32.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_12165F897173413095475341CBA712B3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D2EE9AA6307546D4A70C53723CE8F571"
+            {
+            "SourcePath" = "8:..\\PClient\\config.txt"
+            "TargetName" = "8:config.txt"
             "Tag" = "8:"
             "Folder" = "8:_12165F897173413095475341CBA712B3"
             "Condition" = "8:"
