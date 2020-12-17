@@ -98,7 +98,7 @@ int Paint::render()
         updateCPS();
         updateRCPS();
     }
-    if (getMenuStatus() == 0)
+    if (getMenuStatus() != 1)
     {
         if (targetWnd == GetForegroundWindow())
         {
@@ -114,7 +114,8 @@ int Paint::render()
 
                 drawText((char*)getYoutubeData(), 100 + scaleYT * 80, (height - 55), 255, 237, 90, 255, mainFont);
             }
-
+            //drawText((char*)toChar(), 100 + scaleYT * 80, (height - 55), 255, 237, 90, 255, mainFont);
+            
             //Keystrokes
             drawKeystrokes(d3dDevice, width, height, mainFont);
         }

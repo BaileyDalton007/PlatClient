@@ -1,14 +1,24 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(467,5): warning MSB8028: The intermediate directory (x64\Release\) contains files shared from another project (ExternalOverlay.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   Using triplet "x64-windows" from "C:\Users\Bailey\vcpkg\installed\x64-windows\"
-  PClient.cpp
+  keystrokes.cpp
 C:\Users\Bailey\vcpkg\installed\x64-windows\include\boost\bind.hpp(41): message : The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
-C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\PClient\zoom.h(6,42): warning C4042: 'proc': has bad storage class
-C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\PClient\PClient.cpp(283,34): warning C4101: 'exc': unreferenced local variable
-  pointerParser.cpp
-C:\Users\Bailey\vcpkg\installed\x64-windows\include\boost\bind.hpp(41): message : The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\PClient\keystrokes.cpp(81,19): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\PClient\keystrokes.cpp(82,22): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\PClient\keystrokes.cpp(173,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\PClient\keystrokes.cpp(174,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\PClient\keystrokes.cpp(196,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\PClient\keystrokes.cpp(197,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\PClient\keystrokes.cpp(201,70): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\PClient\keystrokes.cpp(205,70): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\PClient\keystrokes.cpp(223,51): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\PClient\keystrokes.cpp(223,42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\PClient\keystrokes.cpp(224,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\PClient\keystrokes.cpp(224,43): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\PClient\keystrokes.cpp(241,80): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
+C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\PClient\keystrokes.cpp(241,62): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
   Generating code
-  12 of 1886 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    40 functions had inline decision re-evaluated but remain unchanged
+  55 of 1911 functions ( 2.9%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    3 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   PClient.vcxproj -> C:\Users\Bailey\Desktop\Projects\PlatClient\PlatClient\x64\Release\PClient.exe

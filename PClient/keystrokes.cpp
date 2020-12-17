@@ -11,7 +11,11 @@
 float wPosX;
 float wPosY;
 
-Config keyConfig{};
+Config keyConfig = getConfig(keyConfig);
+
+int configScale = keyConfig.keyStrokesScale; 
+float keyScale = float(float(configScale) / 100);
+
 
 RECT passiveRect = { 64, 0, 128, 64 };
 RECT activeRect = { 0, 0, 64, 64 };
@@ -37,9 +41,12 @@ LPDIRECT3DTEXTURE9 dTexture = NULL;
 
 ::D3DXMATRIX mouseButtonScalingMatrix;
 
+D3DXMATRIX keyStrokesScaling;
+
+D3DXVECTOR2 scaling(float(keyScale), keyScale);
+
 int keystrokesInit(IDirect3DDevice9Ex* device, int width, int height)
 {
-    keyConfig = getConfig(keyConfig);
 
     device ->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
     device->SetRenderState(D3DRS_BLENDOP, D3DBLENDOP_ADD);
@@ -56,6 +63,8 @@ int keystrokesInit(IDirect3DDevice9Ex* device, int width, int height)
 
     if (keyConfig.showKeystrokes)
     {
+        D3DXMatrixTransformation2D(&keyStrokesScaling, NULL, 0.0, &scaling, NULL, NULL, NULL);
+
         D3DXCreateTextureFromFile(device, L"assests/wkey.png", &wTexture);
         D3DXCreateTextureFromFile(device, L"assests/akey.png", &aTexture);
         D3DXCreateTextureFromFile(device, L"assests/skey.png", &sTexture);
@@ -75,14 +84,17 @@ int keystrokesInit(IDirect3DDevice9Ex* device, int width, int height)
 
 int drawW(IDirect3DDevice9Ex* device, int width, int height)
 {
+
     wSprite->Begin(NULL);
 
     if (GetKeyState(0x57) & 0x8000)
     {
-        wSprite->Draw(wTexture, &activeRect, NULL, &D3DXVECTOR3(wPosX, wPosY, 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
+        wSprite->Draw(wTexture, &activeRect, NULL, &D3DXVECTOR3(wPosX / keyScale, wPosY / keyScale, 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
+        wSprite->SetTransform(&keyStrokesScaling);
     }
     else {
-        wSprite->Draw(wTexture, &passiveRect, NULL, &D3DXVECTOR3(wPosX, wPosY, 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
+        wSprite->Draw(wTexture, &passiveRect, NULL, &D3DXVECTOR3(wPosX/keyScale, wPosY / keyScale, 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
+        wSprite->SetTransform(&keyStrokesScaling);
     }
 
     wSprite->End();
@@ -96,10 +108,13 @@ int drawA(IDirect3DDevice9Ex* device, int width, int height)
       
     if (GetKeyState(0x41) & 0x8000)
     {
-        aSprite->Draw(aTexture, &activeRect, NULL, &D3DXVECTOR3(wPosX - 70, wPosY + 70, 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
+        aSprite->Draw(aTexture, &activeRect, NULL, &D3DXVECTOR3((wPosX - (70*keyScale)) / keyScale, (wPosY + (70 * keyScale)) / keyScale, 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
+        aSprite->SetTransform(&keyStrokesScaling);
     }
     else {
-        aSprite->Draw(aTexture, &passiveRect, NULL, &D3DXVECTOR3(wPosX - 70, wPosY + 70, 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
+        aSprite->Draw(aTexture, &passiveRect, NULL, &D3DXVECTOR3((wPosX - (70 * keyScale)) / keyScale, (wPosY + (70 * keyScale)) / keyScale, 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
+        aSprite->SetTransform(&keyStrokesScaling);
+
     }
 
     aSprite->End();
@@ -113,10 +128,14 @@ int drawS(IDirect3DDevice9Ex* device, int width, int height)
 
     if (GetKeyState(0x53) & 0x8000)
     {
-        sSprite->Draw(sTexture, &activeRect, NULL, &D3DXVECTOR3(wPosX, wPosY + 70, 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
+        sSprite->Draw(sTexture, &activeRect, NULL, &D3DXVECTOR3(wPosX / keyScale, (wPosY + (70 * keyScale)) / keyScale, 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
+        sSprite->SetTransform(&keyStrokesScaling);
+
     }
     else {
-        sSprite->Draw(sTexture, &passiveRect, NULL, &D3DXVECTOR3(wPosX, wPosY + 70, 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
+        sSprite->Draw(sTexture, &passiveRect, NULL, &D3DXVECTOR3(wPosX / keyScale, (wPosY + (70 * keyScale)) / keyScale, 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
+        sSprite->SetTransform(&keyStrokesScaling);
+
     }
 
     sSprite->End();
@@ -130,10 +149,14 @@ int drawD(IDirect3DDevice9Ex* device, int width, int height)
 
     if (GetKeyState(0x44) & 0x8000)
     {
-        dSprite->Draw(dTexture, &activeRect, NULL, &D3DXVECTOR3(wPosX + 70, wPosY + 70, 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
+        dSprite->Draw(dTexture, &activeRect, NULL, &D3DXVECTOR3((wPosX + (70 * keyScale)) / keyScale, (wPosY + (70 * keyScale)) / keyScale, 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
+        dSprite->SetTransform(&keyStrokesScaling);
+
     }
     else {
-        dSprite->Draw(dTexture, &passiveRect, NULL, &D3DXVECTOR3(wPosX + 70, wPosY + 70, 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
+        dSprite->Draw(dTexture, &passiveRect, NULL, &D3DXVECTOR3((wPosX + (70 * keyScale)) / keyScale, (wPosY + (70 * keyScale)) / keyScale, 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
+        dSprite->SetTransform(&keyStrokesScaling);
+
     }
 
     dSprite->End();
@@ -145,13 +168,17 @@ int drawLMB(IDirect3DDevice9Ex* device, int width, int height)
 {
     lmbSprite->Begin(NULL);
 
+    float lmbPosX = ((wPosX - 70 * keyScale) / 0.773) / keyScale;
+    float lmbPosY = ((wPosY + 140 * keyScale) / 0.510) / keyScale;
+
     if (GetKeyState(VK_LBUTTON) & 0x8000)
     {
-        lmbSprite->Draw(lmbTexture, NULL, NULL, &D3DXVECTOR3(float((wPosX - 70) / 0.773), float((wPosY + 140) / 0.510), 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
+        lmbSprite->Draw(lmbTexture, NULL, NULL, &D3DXVECTOR3(lmbPosX, lmbPosY, 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
         lmbSprite->SetTransform(&mouseButtonScalingMatrix);
+
     }
     else {
-        lmbSprite->Draw(lmbTexture, NULL, NULL, &D3DXVECTOR3(float((wPosX - 70) / 0.773), float((wPosY + 140) / 0.510), 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
+        lmbSprite->Draw(lmbTexture, NULL, NULL, &D3DXVECTOR3(lmbPosX, lmbPosY, 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
         lmbSprite->SetTransform(&mouseButtonScalingMatrix);
     }
 
@@ -164,15 +191,16 @@ int drawRMB(IDirect3DDevice9Ex* device, int width, int height)
 {
     rmbSprite->Begin(NULL);
 
-    float lmbPos = (wPosX - 70) / 0.773;
+    float lmbPosX = ((wPosX - 70 * keyScale) / 0.773) / keyScale;
+    float lmbPosY = ((wPosY + 140 * keyScale) / 0.510) / keyScale;
 
     if (GetKeyState(VK_RBUTTON) & 0x8000)
     {
-        rmbSprite->Draw(rmbTexture, NULL, NULL, &D3DXVECTOR3(lmbPos + (105 / 0.773) , float((wPosY + 140) / 0.510), 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
+        rmbSprite->Draw(rmbTexture, NULL, NULL, &D3DXVECTOR3(lmbPosX + (105 / 0.773) , lmbPosY, 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
         rmbSprite->SetTransform(&mouseButtonScalingMatrix);
     }
     else {
-        rmbSprite->Draw(rmbTexture, NULL, NULL, &D3DXVECTOR3(lmbPos + (105 / 0.773), float((wPosY + 140) / 0.510), 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
+        rmbSprite->Draw(rmbTexture, NULL, NULL, &D3DXVECTOR3(lmbPosX + (105 / 0.773), lmbPosY, 0.0f), D3DCOLOR_ARGB(0, 255, 255, 255));
         rmbSprite->SetTransform(&mouseButtonScalingMatrix);
     }
 
@@ -185,8 +213,13 @@ Paint paintThing;
 
 int drawCPS(IDirect3DDevice9Ex* device, int width, int height, ID3DXFont* font)
 {
-    paintThing.drawText((char*)getCPS(), (wPosX - 70) + 45, (wPosY + 140) + 30, 255, 255, 255, 255, font);
-    paintThing.drawText((char*)getRCPS(), (wPosX - 70) + 150, (wPosY + 140) + 30, 255, 255, 255, 255, font);
+    float cpsPosX = wPosX - (30 * keyScale);
+    float rcpsPosX = cpsPosX + (105 * keyScale);
+
+    float cpsPosY = wPosY + (170*keyScale);
+
+    paintThing.drawText((char*)getCPS(), cpsPosX, cpsPosY, 255, 255, 255, 255, font);
+    paintThing.drawText((char*)getRCPS(), rcpsPosX, cpsPosY, 255, 255, 255, 255, font);
 
     return 0;
 }
@@ -203,7 +236,7 @@ int drawKeystrokes(IDirect3DDevice9Ex* device, int width, int height, ID3DXFont*
 
     if (keyConfig.showCPS)
     {
-        ::D3DXMatrixScaling(&mouseButtonScalingMatrix, 0.773f, 0.510f, 1.0f);
+        ::D3DXMatrixScaling(&mouseButtonScalingMatrix, 0.773 * keyScale, 0.510 * keyScale, 1.0f);
         drawLMB(device, width, height);
         drawRMB(device, width, height);
 

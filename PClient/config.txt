@@ -64,6 +64,11 @@ showCPS = 1
 [0, 1]
 toggles if CPS (clicks per second) are displayed on the overlay
 
+keyStrokeScale = 100
+[60-150]
+size of keystrokes/cps, I suggest keeping this between 60 and 150 as any bigger or smaller starts looking
+weird. Default is 100.
+
 keyStrokeX = 200
 [number above 0]
 the distance from the keystrokes to the right side of the minecraft window

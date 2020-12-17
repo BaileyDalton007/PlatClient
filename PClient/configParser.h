@@ -17,6 +17,7 @@ struct Config {
     bool showCPS;
     int keyStrokesX;
     int keyStrokesY;
+    int keyStrokesScale;
     int displayScale;
 };
 

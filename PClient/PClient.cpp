@@ -52,6 +52,10 @@ uintptr_t menuAddr;
 
 bool discBool;
 int menuStatus;
+int currMenu;
+std::vector<int> menuVector;
+int menuSample = 20;
+
 
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR    lpCmdLine, _In_ int       nCmdShow)
@@ -144,7 +148,19 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
 
         MoveWindow(overlayHWND, rect.left, rect.top, width, height, true);
 
-        ReadProcessMemory(hProcess, (BYTE*)menuAddr, &menuStatus, sizeof(menuStatus), NULL);
+        //Menu queue
+            menuAddr = mem::FindDMAAddy(hProcess, menuDynamicPtrBaseAddr, menuOffsets);
+
+            ReadProcessMemory(hProcess, (BYTE*)menuAddr, &currMenu, sizeof(currMenu), NULL);
+
+        while (menuVector.size() >= menuSample)
+            {
+                //menuVector.erase(menuVector.begin() + (menuSample - 1));
+                menuVector.pop_back();
+            }
+        //menuVector.push_back(currMenu);
+        menuVector.insert(menuVector.begin(), currMenu);
+
 
         if (config.zoomBool == true)
         {
@@ -284,7 +300,17 @@ std::wstring readpChar(uintptr_t address) {
     return std::wstring(L"\0");
 }
 
+float menuThreash = 0.60; 
 int getMenuStatus()
 {
-    return menuStatus;
+    int currHis = std::count(menuVector.begin(), menuVector.end(), 1);
+    int currThreash = currHis / menuSample;
+    if (currHis >= (menuSample - 2))
+    {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+    
 }

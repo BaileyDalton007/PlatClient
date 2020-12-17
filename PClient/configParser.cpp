@@ -75,6 +75,19 @@ void loadConfig(Config& config) {
             }
             config.keyStrokesY = d;
         }
+        else if (line.find("keyStrokeScale") != -1)
+        {
+            sin >> c;
+            int d;
+            try
+            {
+                d = stoi(c, 0, 10);
+            }
+            catch (...) {
+                d = 100;
+            }
+            config.keyStrokesScale = d;
+        }
         else if (line.find("displayScale") != -1)
         {
             sin >> a;
